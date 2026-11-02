@@ -7,6 +7,7 @@ decision in one sentence under its title, then its status, context, decision and
 
 | Record | Summary |
 |---|---|
+| [0002 Keep the name after the frame step](0002-keep-the-name-after-the-frame-step.md) | The repository keeps its provisional name, since the field has no one word for both its questions |
 | [0001 A repository of its own](0001-a-repository-of-its-own.md) | The completeness and the convergence of the family's setup is one problem, so it is one repository, set up before any work on it |
 
 ## See also

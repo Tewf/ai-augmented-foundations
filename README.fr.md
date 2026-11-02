@@ -10,9 +10,10 @@ optimum. Les membres tiennent la méthode ; ce dépôt l'étudie avec les outils
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-02) :** mis en place ; rien n'est encore écrit au-delà du périmètre. Le premier travail est une revue
-> de littérature, non commencée. Le nom est provisoire jusqu'à ce que la première étape de cette revue dise comment le
-> domaine nomme la chose. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-02) :** la première revue de littérature est écrite, en deux topics, comme première passe : 34 sources
+> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice. Elle nomme sa référence. Le nom reste provisoire :
+> la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et ne propose
+> aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -66,21 +67,35 @@ digraph where_it_sits {
 
 ## Le premier travail : une revue de littérature
 
-Non commencée. Elle suit l'ordre d'une revue de thèse, et elle est finie quand elle peut nommer la référence.
+Écrit, en première passe sur deux topics : [expressiveness](evidence/expressiveness/) et [convergence](evidence/convergence/).
+Chacun suit les cinq étapes d'une revue de thèse (cadrage, revue, état de l'art, positionnement, référence) et finit sur
+sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliography.md).
 
-1. **Cadrer :** les deux problèmes en une phrase chacun, et comment chaque domaine les nomme. Pistes à vérifier :
-   expressivité des modèles de document hiérarchiques et en graphe, charge cognitive, rationalité limitée et
-   satisfaction, arrêt optimal, algorithmes anytime, optimisation multi-objectif. Le dépôt peut être renommé alors.
-2. **Revue :** chaque nom, cherché par son nom académique, son acronyme et son auteur ; les synthèses d'abord.
-   - ce que la revue des modèles de nœud du topic tient déjà : graphes ET-OU, hypergraphes, réseaux de tâches, schémas d'argumentation ;
-   - l'expressivité formelle des encodages de problèmes en arbre et en graphe, et leurs limites connues ;
-   - la charge cognitive et le coût de la profondeur, que reader-ergonomics grade déjà ;
-   - la satisfaction, les règles d'arrêt et les algorithmes anytime : quand arrêter la recherche d'un résultat ;
-   - l'optimisation multi-objectif : ce qu'est un optimum quand lecteurs, auteurs et vérificateurs veulent des choses différentes.
-3. **État de l'art, et le dossier contre.**
-4. **Positionnement :** ce que ce dépôt demande et que le domaine ne répond pas déjà.
-5. **Référence :** la seule optimisation exacte déjà menée sur les conventions, avec son résultat, contre la meilleure
-   formulation trouvée par la revue.
+## Ce que la revue a trouvé
+
+1. **Complet est trivial tant que le contenu n'est pas typé.** Un arbre plus m moins n plus c arêtes de référence
+   encode tout graphe fini. Un seul topic qui contient tout le texte encode n'importe quoi. La vraie question est
+   quelles vérifications un programme peut faire sur la partie typée ; la décomposition hiérarchique a des classes de
+   langages formels (Höller 2014). Aucun problème qui n'ait besoin ni d'arbre ni de graphe n'a été trouvé.
+2. **Aucun coût d'un arbre de topics n'est validé.** Pour le code, 121 métriques n'ont pas capté la compréhensibilité
+   (Scalabrino 2021), et un seul décompte, Cognitive Complexity, corrèle avec le temps de compréhension (Muñoz Barón
+   2020). Qu'un décompte d'imbrication prédise l'effort d'un lecteur sur des topics n'est pas testé.
+3. **Le domaine a le cadre de la convergence.** La satisfaction (satisficing), l'optimalité bornée et les algorithmes
+   anytime donnent la qualité en fonction du temps et l'arrêt comme décision. Aucune source ne les applique à la
+   structure d'une collection de documents.
+4. **L'optimum exact et l'arbre accepté diffèrent par nature.** Dans l'exécution du mainteneur, l'optimum était groupé
+   par produit et l'arbre du propriétaire par étape. Candela 2016 a trouvé un écart du même genre dans du code. S'arrêter
+   à l'acceptable, et se servir de l'optimum comme borne.
+5. **Un programme peut tester « fini »** comme un critère écrit plus une tolérance sur l'écart d'optimalité. Aucune règle
+   d'arrêt n'a été trouvée pour une loi inconnue de ce que le prochain changement apporte.
+
+## La référence
+
+- **Expressiveness :** un arbre avec des arêtes de référence, comme les cartes DITA et SKOS ; la classe de langage de la
+  décomposition ; Cognitive Complexity comme coût à battre ([référence](evidence/expressiveness/baseline.md)).
+- **Convergence :** l'optimisation exacte du mainteneur, mise par écrit pour cette revue, avec ses résultats. Elle est
+  comparée au coût de Dasgupta par liaison moyenne, à la qualité de modularisation, à un front de Pareto et à un coût borné en profondeur
+  ([référence](evidence/convergence/baseline.md)).
 
 ## Questions auxquelles la revue doit répondre
 
@@ -107,6 +122,7 @@ sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](ht
 
 | Partie | Résumé |
 |---|---|
+| [evidence](evidence/) | la première revue en deux topics, expressiveness et convergence, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

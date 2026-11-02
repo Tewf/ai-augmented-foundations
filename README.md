@@ -10,9 +10,10 @@ The members hold the method; this repository studies it with the tools of logic,
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-02):** set up; nothing is written yet beyond the scope. The first job is a literature review, not
-> started. The name is provisional until that review's first step says what the field calls this. It is not an
-> official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-02):** the first literature review is written, in two topics, as a first pass: 34 new sources and 6
+> linked from sibling reviews, read by abstract or record. It names its baseline. The name is still provisional: the review
+> found that the field says expressive power and anytime stopping, not complete and converges, and proposes no rename.
+> It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -66,21 +67,34 @@ digraph where_it_sits {
 
 ## The first job: a literature review
 
-Not started. It follows the order of a thesis review, and it is finished when it can name the baseline.
+Written, as a first pass of two topics: [expressiveness](evidence/expressiveness/) and [convergence](evidence/convergence/).
+Each follows the five steps of a thesis review (frame, review, state of the art, position, baseline) and ends on its
+baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.md).
 
-1. **Frame:** the two problems in one sentence each, and what each field calls them. Leads to verify: expressiveness
-   of hierarchical and graph document models, cognitive load, bounded rationality and satisficing, optimal stopping,
-   anytime algorithms, multi-objective optimisation. The repository may be renamed then.
-2. **Review:** each name, searched by its academic name, its acronym and its author; surveys first.
-   - what the topic's node-model review already holds: AND-OR graphs, hypergraphs, task networks, argument schemes;
-   - formal expressiveness of tree and graph encodings of problems, and their known limits;
-   - cognitive load and the cost of depth, what reader-ergonomics already grades;
-   - satisficing, stopping rules and anytime algorithms: when to stop a search for a result;
-   - multi-objective optimisation: what an optimum is when readers, writers and checkers want different things.
-3. **State of the art, and the case against.**
-4. **Position:** what this repository asks that the field does not already answer.
-5. **Baseline:** the one exact optimisation already run on the conventions, with its result, against the best
-   formulation the review found.
+## What the review found
+
+1. **Complete is trivial until content is typed.** A tree plus m minus n plus c reference edges encodes any finite
+   graph, and one topic holding all the text encodes anything. The real question is which checks a program can run on
+   the typed fragment; hierarchical decomposition has formal language classes (Höller 2014). No problem that needs
+   neither a tree nor a graph was found.
+2. **No cost of a tree of topics has been validated.** For code, 121 metrics failed to capture understandability
+   (Scalabrino 2021), and one count, Cognitive Complexity, correlates with comprehension time (Muñoz Barón 2020).
+   Whether a nesting count predicts a reader's effort on topics is untested.
+3. **The field has the frame for convergence.** Satisficing, bounded optimality and anytime algorithms give quality as
+   a function of time and stopping as a decision. No source applies them to the structure of a document collection.
+4. **The exact optimum and the accepted tree differ in kind.** In the maintainer's own run the optimum was grouped by
+   product and the owner's tree by stage. Candela 2016 found a gap of the same kind in code. Stop at acceptable, and
+   use the optimum as a bound.
+5. **Done can be tested by a program** as a written criterion plus a tolerance on the optimality gap. No stopping rule
+   was found for an unknown distribution of what the next change brings.
+
+## The baseline
+
+- **Expressiveness:** a tree with reference edges, as in DITA maps and SKOS; the language class of the decomposition;
+  Cognitive Complexity as the cost to beat ([baseline](evidence/expressiveness/baseline.md)).
+- **Convergence:** the maintainer's own exact optimisation, written down for this review, with its results, against
+  Dasgupta's cost by average linkage, modularisation quality, a Pareto front and a depth-bounded cost
+  ([baseline](evidence/convergence/baseline.md)).
 
 ## Questions the review must answer
 
@@ -107,6 +121,7 @@ to master also renders the site, [tewf.github.io/ai-augmented-foundations](https
 
 | Part | Summary |
 |---|---|
+| [evidence](evidence/) | the first review in two topics, expressiveness and convergence, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

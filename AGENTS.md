@@ -7,8 +7,8 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814
 
 1. Read the standard at the release this repository checks against (v1.19.2), and the front page's scope: what is in,
    what is out, and which neighbour holds what is out.
-2. The first job is the review on the front page, in its five steps, staged outside this repository until it names its
-   baseline; it is finished when it can. The repository may be renamed at the frame step.
+2. The first job, the review on the front page in its five steps, is written under [evidence/](evidence/) and names
+   its baseline. A later review adds a topic folder there. The frame step found no reason to rename the repository.
 3. A fact that belongs to a neighbour is linked, never copied. A choice that shapes the repository gets a record in
    [decisions/](decisions/).
 
