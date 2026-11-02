@@ -18,3 +18,108 @@ path = "README.fr.md"
 question = "reads about equally as tutorial and reference: one mode per document?"
 file = "18cc89e3d66a"
 answer = "Reference: la page d'accueil, lue pour `Où il se place`, le `Périmètre` et `Le premier travail`, puis les `Questions auxquelles la revue doit répondre`. Sa seule tâche, `Vérifier`, tient en deux commandes pour qui veut lancer les vérifications."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/protocol.md"
+question = "says nearly what evidence/expressiveness/protocol.md (line 58) says, similarity 0.98: one fact in two places?"
+file = "e21a62786d19"
+answer = "No: the strings and counts differ; only the pointer under `Stopping, selection, scoring, synthesis and limits` is common, and it links to the one method in the evidence README."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/review.md"
+question = "says nearly what evidence/expressiveness/review.md (line 3) says, similarity 0.96: one fact in two places?"
+file = "8faece523519"
+answer = "No: each review opens with its own reading rule and holds different strands; the shared sentence only says `Surveys first` and how numbers are marked."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/state-of-the-art.md"
+question = "says nearly what evidence/expressiveness/state-of-the-art.md (line 3) says, similarity 0.92: one fact in two places?"
+file = "a1d00fd8db99"
+answer = "No: the tables differ; the two files share only the sentence that keeps `most adopted` apart from best evidence, which is the format's rule."
+
+[[answer]]
+check = "document-mode"
+path = "AGENTS.md"
+question = "reads about equally as how-to and explanation: one mode per document?"
+file = "c573f6ec78aa"
+answer = "How-to: it is read to act, under `Before writing` and `Before handing back`; the explanation sections give the reason for each rule in a line."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "a67da180f124"
+answer = "Référence : la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`; la seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/convergence/review.md"
+question = "reads about equally as how-to and reference: one mode per document?"
+file = "8faece523519"
+answer = "Reference: it is looked up by strand, from `Strand 0` to the last, and each strand ends in a reading that explains in one line."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/frame.md"
+question = "the name 'frame' and the opening are far apart in meaning (0.11): does the name predict the content?"
+file = "714c422b89f8"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Names` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/position.md"
+question = "the name 'position' and the opening are far apart in meaning (-0.01): does the name predict the content?"
+file = "bd228acf0d47"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `What is known` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/protocol.md"
+question = "the name 'protocol' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "e21a62786d19"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Why grey literature` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/state-of-the-art.md"
+question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
+file = "a1d00fd8db99"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/frame.md"
+question = "the name 'frame' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "da27dd90eddb"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Names` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/position.md"
+question = "the name 'position' and the opening are far apart in meaning (-0.02): does the name predict the content?"
+file = "f24452d48f60"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `What is known` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/protocol.md"
+question = "the name 'protocol' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "7e3091a1e66a"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Why grey literature` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/review.md"
+question = "the name 'review' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "47dedfd33131"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Strand 0` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/state-of-the-art.md"
+question = "the name 'state' and the opening are far apart in meaning (0.01): does the name predict the content?"
+file = "0a499bab9142"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds` shows; the low score is the short opening line, not a mismatch."
