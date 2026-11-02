@@ -1,0 +1,5 @@
+---
+title: "AI-augmented foundations"
+---
+
+{{< include README.md >}}

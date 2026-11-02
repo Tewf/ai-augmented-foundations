@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  If this repository helps you, you may cite it as below. It is an informal,
+  work-in-progress synthesis of published research, written with Claude, an AI
+  assistant by Anthropic. It is not an official standard, not peer-reviewed,
+  and not a new result.
+title: "ai-augmented-foundations (work in progress)"
+abstract: >-
+  Whether the family's setup is complete and whether it converges: can a tree or graph of topics encode every problem at a cognitive cost a person bears; how fast a project reaches a result, acceptable or optimal, and what an optimum is. Scope only; the review is not started.
+type: software
+authors:
+  - name: "Tewf"
+repository-code: "https://github.com/Tewf/ai-augmented-foundations"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - expressiveness
+  - cognitive load
+  - satisficing
+  - optimal stopping
+  - multi-objective optimisation
+  - literature review
