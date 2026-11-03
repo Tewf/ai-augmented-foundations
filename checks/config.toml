@@ -47,3 +47,6 @@ topic_budget = 12.0     # PROVISIONAL: the cost of one topic past which the chec
 [optimality_gap]
 records = ["evidence/convergence/runs.toml"]
 tolerance = 0.05   # PROVISIONAL: the largest relative gap at which a run is accepted; nothing sets it, the review only says to state one
+
+[standard_card]
+facets = ["expressiveness", "convergence"]   # the principle groups, in the order the card shows them

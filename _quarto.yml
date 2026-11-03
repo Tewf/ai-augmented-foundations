@@ -12,12 +12,17 @@ project:
 
 website:
   title: "AI-augmented foundations"
+  description: "Whether the family's setup is complete and whether it converges: what a tree or graph of topics can encode, a computed cost of a tree that no study has validated, and when a project stops at an acceptable result. Three principles, each with its grade."
   site-url: "https://tewf.github.io/ai-augmented-foundations/"
   repo-url: "https://github.com/Tewf/ai-augmented-foundations"
   repo-actions: [source, issue]
   page-navigation: true
   navbar:
     left:
+      - text: Principles
+        href: standard.md
+      - text: Evidence
+        href: evidence/index.qmd
       - text: Decisions
         href: decisions/README.md
     right:
