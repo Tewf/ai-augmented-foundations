@@ -10,14 +10,40 @@ optimum. Les membres tiennent la méthode ; ce dépôt l'étudie avec les outils
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03) :** la première revue de littérature est écrite, en deux topics, comme première passe : 34 sources
-> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice. Elle nomme sa référence. Un coût candidat d'un arbre de topics est calculé sur les huit arbres de la famille ; rien ne le valide. Trois principes sont écrits à partir des
-> constats gradués, chacun avec une vérification. Le nom reste provisoire :
-> la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et ne propose
-> aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-03) :** version 0.1.0. Construit : la première revue de littérature, en deux topics (34 sources
+> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice) avec ses références nommées, un coût candidat d'un
+> arbre de topics calculé sur les huit arbres de la famille, trois principes chacun avec une vérification, et 49 tests
+> unitaires des deux vérifications. Ouvert : rien ne valide le coût candidat, l'écart à l'optimum est calculé sur trois
+> exécutions enregistrées dont aucune n'est marquée acceptée, et il n'y a pas encore de forme. Le nom reste
+> provisoire : la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et
+> ne propose aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat
+> nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
+
+## L'adopter
+
+Dix minutes, sans lire les revues. La forme générale est la section « Take your own version » de
+[reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/README.md#take-your-own-version) ; la voici pour mesurer un arbre de topics.
+
+1. **Épingler la norme par son commit**, pour que ses vérifications ne changent pas sous vos pieds :
+   `git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout b9732b9` (v1.19.2).
+2. **Copier ce dont vous avez besoin, une fois :** les deux vérifications de [checks/local/](checks/local/)
+   (`topic_cost.py`, `optimality_gap.py`) dans le `checks/local/` de votre dépôt, et les [principes](principles/) que
+   vous adoptez. Il n'y a pas de forme ici ; l'unité est le fichier de principe. Les copies sont à vous ; notez le commit
+   d'où vous les avez prises.
+3. **Configurer** avec un `checks/config.toml` qui étend la norme et recopie les tables `[topic_cost]` et
+   `[optimality_gap]` de [celui-ci](checks/config.toml) ; chaque valeur y est marquée PROVISIONAL, gardez la marque :
+
+   ```toml
+   extends = "reader-ergonomics"
+   ```
+
+4. **Lancer les vérifications** depuis le dossier de votre dépôt : `python3 reader-ergonomics/checks/run.py .`
+   Pour afficher le coût de n'importe quel arbre de topics : `python3 checks/local/topic_cost.py chemin/vers/le/depot`.
+5. **Désaccord :** ouvrez une issue sur ce dépôt, avec la preuve. Une règle de la norme elle-même va aux issues de
+   reader-ergonomics ; une préférence de votre lecteur va dans un style de lecteur, comme dérogation.
 
 ## Où il se place
 
@@ -113,11 +139,11 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 ## Vérifier
 
 ```sh
-git clone https://github.com/Tewf/reader-ergonomics
+git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout b9732b9
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
 
-La CI exécute les mêmes vérifications à chaque push, et une exécution échoue à la première erreur
+La CI exécute d'abord les tests unitaires des deux vérifications, puis les mêmes vérifications, à chaque push, et une exécution échoue à la première erreur
 ([checks.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/checks.yml)). Chaque push
 sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](https://tewf.github.io/ai-augmented-foundations/)
 ([pages.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/pages.yml)).

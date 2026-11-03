@@ -10,15 +10,38 @@ The members hold the method; this repository studies it with the tools of logic,
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03):** the first literature review is written, in two topics, as a first pass: 34 new sources and 6
-> linked from sibling reviews, read by abstract or record. It names its baseline. A candidate cost of a tree of topics is
-> computed on the family's eight trees; nothing validates it. Three principles are written from the
-> graded findings, each with a check. The name is still provisional: the review
-> found that the field says expressive power and anytime stopping, not complete and converges, and proposes no rename.
-> It is not an official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-03):** version 0.1.0. Built: the first literature review, in two topics (34 new sources and 6
+> linked from sibling reviews, read by abstract or record) with its baselines named, a candidate cost of a tree of
+> topics computed on the family's eight trees, three principles each with a check, and 49 unit tests of the two checks.
+> Open: nothing validates the candidate cost, the optimality gap is computed on three recorded runs and none is marked
+> accepted, and there are no shapes yet. The name is still provisional: the review found that the field says
+> expressive power and anytime stopping, not complete and converges, and proposes no rename. It is not an official
+> standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
+
+## Take it
+
+Ten minutes, without reading the reviews. The general form is reader-ergonomics'
+[Take your own version](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/README.md#take-your-own-version); here it is for measuring a tree of topics.
+
+1. **Pin the standard by commit**, so its checks do not change under you:
+   `git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout b9732b9` (v1.19.2).
+2. **Copy what you need, once:** the two checks in [checks/local/](checks/local/) (`topic_cost.py`,
+   `optimality_gap.py`) into your repository's `checks/local/`, and the [principles](principles/) you adopt. There is no
+   shape here; the unit is the principle file. The copies are yours; note the commit you copied from.
+3. **Configure** with a `checks/config.toml` that extends the standard and copies the `[topic_cost]` and
+   `[optimality_gap]` tables of [this one](checks/config.toml); every value there is tagged PROVISIONAL, so keep the tag:
+
+   ```toml
+   extends = "reader-ergonomics"
+   ```
+
+4. **Run the checks** from the folder of your repository: `python3 reader-ergonomics/checks/run.py .`
+   To print the cost of any tree of topics: `python3 checks/local/topic_cost.py path/to/repository`.
+5. **Disagree** by opening an issue on this repository, with the evidence. A rule of the standard itself goes to
+   reader-ergonomics' issues; a preference of your own reader goes in a reader style as an override.
 
 ## Where it sits
 
@@ -113,11 +136,11 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 ## Check it
 
 ```sh
-git clone https://github.com/Tewf/reader-ergonomics
+git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout b9732b9
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
 
-CI runs the same checks on every push, and a run fails on any error
+CI first runs the unit tests of the two checks, then the same checks, on every push, and a run fails on any error
 ([checks.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/checks.yml)). Every push
 to master also renders the site, [tewf.github.io/ai-augmented-foundations](https://tewf.github.io/ai-augmented-foundations/)
 ([pages.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/pages.yml)).

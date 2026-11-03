@@ -13,13 +13,6 @@ file = ""
 answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and record 0001 today, and grows one file per choice."
 
 [[answer]]
-check = "document-mode"
-path = "README.fr.md"
-question = "reads about equally as tutorial and reference: one mode per document?"
-file = "18cc89e3d66a"
-answer = "Reference: la page d'accueil, lue pour `Où il se place`, le `Périmètre` et `Le premier travail`, puis les `Questions auxquelles la revue doit répondre`. Sa seule tâche, `Vérifier`, tient en deux commandes pour qui veut lancer les vérifications."
-
-[[answer]]
 check = "paraphrase"
 path = "evidence/convergence/protocol.md"
 question = "says nearly what evidence/expressiveness/protocol.md (line 58) says, similarity 0.98: one fact in two places?"
@@ -46,13 +39,6 @@ path = "AGENTS.md"
 question = "reads about equally as how-to and explanation: one mode per document?"
 file = "c573f6ec78aa"
 answer = "How-to: it is read to act, under `Before writing` and `Before handing back`; the explanation sections give the reason for each rule in a line."
-
-[[answer]]
-check = "document-mode"
-path = "README.fr.md"
-question = "reads about equally as tutorial and reference: one mode per document?"
-file = "a67da180f124"
-answer = "Référence : la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`; la seule tâche, `Vérifier`, tient en deux commandes."
 
 [[answer]]
 check = "document-mode"
@@ -132,13 +118,6 @@ file = "7cab0f6c4cd0"
 answer = "No: the two files hold different content, a table of sub-questions for convergence and a list of sourced numbers for expressiveness. The similarity comes from the shared frame sentence `Two records are kept apart`, which the standard's shape asks for in each topic."
 
 [[answer]]
-check = "document-mode"
-path = "README.fr.md"
-question = "reads about equally as tutorial and reference: one mode per document?"
-file = "21ea8c393c03"
-answer = "No: the front page is one mode, reference. It gives the scope, the findings and the baseline under `La référence`. The `Vérifier` section is a short list of commands a reader runs once, not a lesson, so it stays."
-
-[[answer]]
 check = "name-content"
 path = "evidence/convergence/state-of-the-art.md"
 question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
@@ -153,39 +132,11 @@ file = ""
 answer = "It stays: `checks/local` is the folder the extension contract names for a repository's own checks, and the standard's runner reads modules there."
 
 [[answer]]
-check = "document-mode"
-path = "README.fr.md"
-question = "reads about equally as tutorial and reference: one mode per document?"
-file = "437d6222ff2c"
-answer = "Référence : la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`; la seule tâche, `Vérifier`, tient en deux commandes."
-
-[[answer]]
 check = "tree-shape"
 path = "checks/local"
 question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
 file = ""
 answer = "It stays: `checks/local` is the folder the extension contract names for a repository's own checks (reader-ergonomics extending.md, Local checks); it holds `topic_cost.py` and `optimality_gap.py`, one module per check, and the runner reads it there."
-
-[[answer]]
-check = "co-change"
-path = "README.fr.md"
-question = "changed together with decisions/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d1076676d952"
-answer = "Non : elles bougent ensemble parce que chaque nouvelle fiche ajoute une ligne à `Contenu` de la page d'accueil et une ligne au README de `decisions`; la page d'accueil renvoie vers le dossier par un lien et ne recopie pas ses fiches."
-
-[[answer]]
-check = "co-change"
-path = "README.md"
-question = "changed together with decisions/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6fa13c150b5f"
-answer = "No: they change together because each new record adds a row to `Contents` on the front page and a row to the README of `decisions`. The front page links the folder and does not copy its records."
-
-[[answer]]
-check = "document-mode"
-path = "README.fr.md"
-question = "reads about equally as tutorial and reference: one mode per document?"
-file = "d1076676d952"
-answer = "Référence : la page d'accueil, lue pour `Où il se place`, `Périmètre` et `Ce que la revue a trouvé`; la seule tâche, `Vérifier`, tient en deux commandes."
 
 [[answer]]
 check = "name-content"
@@ -195,29 +146,50 @@ file = "4995ae2aa65c"
 answer = "Yes: `standard.md` is the name the extension contract gives the card, and its opening points to the standard it extends and to the `Principles` it adds; the low score is the short opening, not a mismatch."
 
 [[answer]]
-check = "section-cohesion"
-path = "AGENTS.md"
-question = "section 'House conventions' is far from every other section (0.24): a second role?"
-file = "07ec04f89499"
-answer = "No: `House conventions` is one more rule for the person changing the repository, like the other sections of this contributor guide; it is far in meaning only because it is about dashes and commit subjects."
+check = "logical-lines"
+path = "README.fr.md"
+question = "94 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "e02566ed7ee9"
+answer = "Il peut rester : son rôle est la page d'accueil, une phrase, `État`, `L'adopter` et la carte des parties, sans partie en double."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "91 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "3560ee9395ee"
+answer = "It may stay: its role is the front page, one sentence, `Status`, `Take it` and the map of the parts, with no part held twice."
 
 [[answer]]
 check = "co-change"
 path = ".github/workflows/checks.yml"
 question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "7a75f3bfcd7a"
-answer = "No: the workflow runs the config's checks and the `unittest` step of the local checks, so a new check changes both; the config is read by the runner and the workflow only calls the runner, and the two folders are fixed by the extension contract and by GitHub."
+file = "7f56eaf5fbba"
+answer = "They stay apart: the workflow pins the standard and runs `Test the local checks`, the config holds the tables the checks read; they changed together while the checks were first added."
 
 [[answer]]
 check = "co-change"
 path = "README.fr.md"
 question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d1076676d952"
-answer = "Non : chaque nouvelle fiche ajoute une ligne à `Contenu` de la page d'accueil et une ligne au README de `decisions`; la page renvoie vers le dossier par un lien et ne recopie pas ses fiches."
+file = "e02566ed7ee9"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contenu` table, and the folder README lists each record, so each new record touches both."
 
 [[answer]]
 check = "co-change"
 path = "README.md"
 question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6fa13c150b5f"
-answer = "No: each new record adds a row to `Contents` on the front page and a row to the README of `decisions`. The front page links the folder and does not copy its records."
+file = "3560ee9395ee"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "e02566ed7ee9"
+answer = "One mode: understanding why. The numbered steps of `L'adopter` are a short section of a front page, not a second mode."
+
+[[answer]]
+check = "section-cohesion"
+path = "AGENTS.md"
+question = "section 'House conventions' is far from every other section (0.24): a second role?"
+file = "41b51a224f34"
+answer = "No second role: `House conventions` is the short list of the conventions the other sections apply, for whoever changes the repository."

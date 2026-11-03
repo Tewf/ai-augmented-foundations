@@ -6,10 +6,12 @@ message: >-
   and not a new result.
 title: "ai-augmented-foundations (work in progress)"
 abstract: >-
-  Whether the family's setup is complete and whether it converges: can a tree or graph of topics encode every problem at a cognitive cost a person bears; how fast a project reaches a result, acceptable or optimal, and what an optimum is. Scope only; the review is not started.
+  Whether the family's setup is complete and whether it converges: can a tree or graph of topics encode every problem at a cognitive cost a person bears; how fast a project reaches a result, acceptable or optimal, and what an optimum is. A first review pass in two topics and a candidate cost of a tree of topics are written.
 type: software
 authors:
   - name: "Tewf"
+version: 0.1.0
+date-released: 2026-11-03
 repository-code: "https://github.com/Tewf/ai-augmented-foundations"
 license:
   - Apache-2.0
