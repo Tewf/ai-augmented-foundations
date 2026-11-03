@@ -15,6 +15,7 @@ Step 4. "Nobody has done this" and "we have not done this here" are kept apart.
 - No source was found that applies stopping theory or anytime theory to the structure of a document collection. Not found in this search.
 - No study measures how far people accept a structure from the optimum of a stated cost, outside code (Candela 2016 is code).
 - No stopping rule was found for a one-off project whose next change has an unknown distribution. Rules exist when a sample is available (Correa 2023) or when the same task is repeated and the rule can be learned (Svegliato 2020; Sung 2021).
+- A later search found rules for one run once a surrogate supplies the distribution of the next gain (Makarova 2022). See [Bayesian optimisation](../bayesian-optimisation/position.md).
 
 ## What this repository adds, and does not
 

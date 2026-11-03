@@ -5,6 +5,7 @@ The second review of this repository. It asks when a project built from a tree o
 - Pool: 23 new sources: 21 formal, 2 grey; 5 more are linked from sibling reviews.
 - Grey scores are in the sources file, both at or above 10 of 20 after a second rating.
 - A first pass: abstracts and records.
+- The stopping rule here is framed again, and derived from the value of information, in [Bayesian optimisation](../bayesian-optimisation/README.md).
 
 ## Files
 
