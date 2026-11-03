@@ -2,11 +2,11 @@
 
 **Decision:** Three findings became principles, the ones that give a writer a rule a program can test; the other findings stay findings, and the cost measure becomes a check.
 
-**Status:** accepted, 2026-11-03. Supersedes the last bullet of [0003](0003-a-candidate-cost-of-a-tree-of-topics.md), "A measure, not a check". **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/shapes/decision-record.md).
+**Status:** accepted, 2026-11-03. Supersedes the last bullet of [0003](0003-a-candidate-cost-of-a-tree-of-topics.md), "A measure, not a check". **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md).
 
 ## Context
 
-- The extension contract asks a card, `standard.md`, built from principle files, each with a claim, a grade, evidence and a check ([extending.md](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/extending.md)).
+- The extension contract asks a card, `standard.md`, built from principle files, each with a claim, a grade, evidence and a check ([extending.md](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/extending.md)).
 - The two reviews graded their findings. A principle may not claim more than its review, and `principle-coverage` fails one that names no registered check.
 - A finding that gives a writer nothing to do is knowledge, not a rule.
 

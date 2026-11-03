@@ -17,7 +17,7 @@
 
 - A measure that is computed can be tested against readers, and one that is argued cannot. The shape borrows Cognitive Complexity, the one code count with a meta-analysis behind it.
 - A broad set of code metrics failed to capture understandability, so a plausible count proves nothing. A measure that does not beat the count of topics and the count of words is not a measure.
-- Each component is a unit the standard already reasons about: [shallow outline](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/principles/document/shallow-outline.md), [browsable folders](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/principles/collection/browsable-folders.md), [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/principles/page/signal-the-structure.md) and [even information density](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/principles/sentence/even-information-density.md).
+- Each component is a unit the standard already reasons about: [shallow outline](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/document/shallow-outline.md), [browsable folders](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/browsable-folders.md), [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/page/signal-the-structure.md) and [even information density](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/sentence/even-information-density.md).
 
 ## Limits
 

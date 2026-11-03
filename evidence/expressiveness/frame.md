@@ -51,4 +51,4 @@ One row per term. A source is where this review first met the term.
 
 - The node model, reuse by reference, cycles and schema classes are in [the topic's document-model review](https://github.com/Tewf/reader-ergonomics-topic/tree/master/evidence/document-model).
 - Depth and its display are in [the topic's progressive-disclosure review](https://github.com/Tewf/reader-ergonomics-topic/tree/master/evidence/progressive-disclosure).
-- Folder breadth and depth for a reader are graded in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/principles/collection/browsable-folders.md).
+- Folder breadth and depth for a reader are graded in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/browsable-folders.md).

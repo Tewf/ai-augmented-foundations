@@ -22,4 +22,4 @@
 
 - Without types the question is nearly trivial: one topic holding all the text encodes anything. Typed content is where it bites, and Höller 2014 is the nearest model, for plans.
 - Treewidth is proved for graphs, and applied to topics here by analogy.
-- Every link costs the reader a decision. The standard's [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/principles/collection/one-place-per-fact.md) says where that trade stops.
+- Every link costs the reader a decision. The standard's [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/one-place-per-fact.md) says where that trade stops.
