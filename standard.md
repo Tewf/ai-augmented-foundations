@@ -5,10 +5,10 @@ What two reviews of the family's setup found, as far as the evidence goes:
 - Can a tree or graph of topics encode a project's problems at a cost a person bears?
 - When is a project that runs this way done?
 
-It extends [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md): read that one first.
+It extends [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md): read that one first.
 This page adds only the three rules the reviews graded, each with its evidence and the check that tests it.
 
-Grades mean what they mean in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md#grades): measured, supported with caveat,
+Grades mean what they mean in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md#grades): measured, supported with caveat,
 convention, not supported. Each principle states its grade and never claims more.
 
 ## Principles

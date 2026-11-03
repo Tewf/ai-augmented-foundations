@@ -49,5 +49,5 @@ When a project built from a tree of topics should stop, given that it can accept
 
 ## Links, not repeated
 
-- Depth and breadth for a reader are graded in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/principles/collection/browsable-folders.md).
+- Depth and breadth for a reader are graded in [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/principles/collection/browsable-folders.md).
 - The loop whose convergence is asked is [reader-ergonomics-blueprint](https://github.com/Tewf/reader-ergonomics-blueprint).

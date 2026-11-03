@@ -7,6 +7,7 @@ A pin move is recorded here, not in decisions/.
 
 ### Added
 
+- Pinned reader-ergonomics v1.21.0 (`2e5b6f0`), from v1.20.0 (`4f99372`): duplication skips the lines a declared shape prescribes
 - A third topic of the literature review, Bayesian optimisation: a project as the optimisation of an unknown objective.
   It has 39 new sources, a named baseline, and a worked model on the family's own runs, a program with its inputs and 20 unit tests.
 - Decision 0005, which reads the project as Bayesian optimisation and derives the stopping rule from the value of information.

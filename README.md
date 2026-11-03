@@ -29,10 +29,10 @@ This page in French: [README.fr.md](README.fr.md).
 ## Take it
 
 Ten minutes, without reading the reviews. The general form is reader-ergonomics'
-[Take your own version](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/README.md#take-your-own-version); here it is for measuring a tree of topics.
+[Take your own version](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/README.md#take-your-own-version); here it is for measuring a tree of topics.
 
 1. **Pin the standard by commit**, so its checks do not change under you:
-   `git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 4f99372` (v1.20.0).
+   `git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 2e5b6f0` (v1.21.0).
 2. **Copy what you need, once:** the two checks in [checks/local/](checks/local/) (`topic_cost.py`,
    `optimality_gap.py`) into your repository's `checks/local/`, and the [principles](principles/) you adopt. There is no
    shape here; the unit is the principle file. The copies are yours; note the commit you copied from.
@@ -79,7 +79,7 @@ digraph where_it_sits {
 
 - **It studies [reader-ergonomics-topic](https://github.com/Tewf/reader-ergonomics-topic/blob/86e14fe9a1a9877d6a87a2f8b4e8713f98724b5a/shapes/topic.md)** (v0.6.1), whose review of node models is the start
   of the expressiveness question, and **[reader-ergonomics-blueprint](https://github.com/Tewf/reader-ergonomics-blueprint)**, the loop whose convergence is asked.
-- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md)** (v1.20.0) and runs its checks in CI.
+- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md)** (v1.21.0) and runs its checks in CI.
 - **It links down only.** The data it needs comes from [ai-augmented-cases](https://github.com/Tewf/ai-augmented-cases);
   the family's map is [ai-augmented](https://github.com/Tewf/ai-augmented).
 
@@ -155,7 +155,7 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 ## Check it
 
 ```sh
-git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 4f99372
+git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 2e5b6f0
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
 

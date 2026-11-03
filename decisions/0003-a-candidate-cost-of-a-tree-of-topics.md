@@ -2,7 +2,7 @@
 
 **Decision:** The cost of a tree of topics is computed from four components, combined as Cognitive Complexity combines nesting and breaks. Every weight is PROVISIONAL.
 
-**Status:** accepted, 2026-11-03; its last bullet is superseded by [0004](0004-which-findings-became-principles.md). **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md).
+**Status:** accepted, 2026-11-03; its last bullet is superseded by [0004](0004-which-findings-became-principles.md). **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/shapes/decision-record.md).
 
 ## Context
 

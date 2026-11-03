@@ -2,7 +2,7 @@
 
 **Decision:** The repository reads a project as the optimisation of an unknown objective. The stopping rule is derived from the value of information: stop when the expected gain is below the cost of a step.
 
-**Status:** accepted, 2026-11-03. Supersedes the framing of the [convergence frame](../evidence/convergence/frame.md), which framed only the stopping rule. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md).
+**Status:** accepted, 2026-11-03. Supersedes the framing of the [convergence frame](../evidence/convergence/frame.md), which framed only the stopping rule. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/shapes/decision-record.md).
 
 ## Context
 
