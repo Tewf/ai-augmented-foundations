@@ -326,3 +326,80 @@ path = "README.md"
 question = "changed together with decisions/README.md in 5 commits (83% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "3376a5dd7a57"
 answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "logical-lines"
+path = "README.fr.md"
+question = "118 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "1a73fdc906c1"
+answer = "Il peut rester : sa fonction est la page d'accueil, avec `État`, `Vérifier` et la carte des parties, sans partie tenue deux fois."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "114 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "d3bf08213f4f"
+answer = "It may stay: its role is the front page, one sentence, `Status`, `Take it` and the map of the parts, with no part held twice."
+
+[[answer]]
+check = "logical-lines"
+path = "design/guide.md"
+question = "115 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "451cd360d880"
+answer = "It may stay: its role is one design document, whose four parts (`Part one` to `Part four`) answer one decision asked, with the trace and the replay held in their own files."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with _quarto.yml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d73626673a90"
+answer = "They stay apart: the workflow runs `Test the replay of the guide` and the other tests, the config holds the tables the checks read; they changed together while checks were added."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/config.toml in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d73626673a90"
+answer = "They stay apart: the workflow runs `Test the replay of the guide` and the other tests, the config holds the tables the checks read; they changed together while checks were added."
+
+[[answer]]
+check = "co-change"
+path = "CHANGELOG.md"
+question = "changed together with decisions/README.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "c49c53aa1c67"
+answer = "They stay apart and already link: the changelog records each record's addition under `Unreleased`, and the folder README lists each record."
+
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with decisions/README.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "1a73fdc906c1"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contenu` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with decisions/README.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d3bf08213f4f"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "1a73fdc906c1"
+answer = "Reference: it is looked up by section, `Contenu` and `Questions auxquelles la revue doit répondre`, and the take-it steps are short."
+
+[[answer]]
+check = "document-mode"
+path = "design/replay.md"
+question = "reads about equally as tutorial and how-to: one mode per document?"
+file = "61ddb70ffa75"
+answer = "Reference: it is looked up for a number, `The agreement` and `What it would have saved or spent`, and the run steps are a short list."
+
+[[answer]]
+check = "document-mode"
+path = "design/trace.md"
+question = "reads about equally as how-to and reference: one mode per document?"
+file = "9e1be04a943a"
+answer = "Reference: it is a table to look up, `The rows`, with a short reading guide under `How to read it`."
