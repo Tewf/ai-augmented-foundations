@@ -27,3 +27,16 @@ family = ["reader-ergonomics",
           "reader-ergonomics-topic",
           "reader-ergonomics-blueprint"]
 shared_links = []
+
+# The candidate cost of a tree of topics (checks/local/topic_cost.py, decision 0003). Nothing validates any value here.
+[topic_cost]
+depth_weight = 1.0      # PROVISIONAL: cost of each level of depth; no study sets it
+nesting_weight = 1.0    # PROVISIONAL: extra cost of a break per level of depth; 1 is Cognitive Complexity's own
+fan_free = 7            # PROVISIONAL: children a reader takes in without a break (Miller's seven, not tested for topics)
+fan_weight = 1.0        # PROVISIONAL: cost of each child beyond fan_free
+run_free = 60           # PROVISIONAL: words before the first list or table that cost nothing (the topic's summary bound)
+run_step = 60           # PROVISIONAL: words of run beyond run_free that make one break
+run_weight = 1.0        # PROVISIONAL: cost of one break of run
+sentence_free = 35      # PROVISIONAL: words of the longest sentence that cost nothing (the family's writing rule)
+sentence_step = 10      # PROVISIONAL: words of sentence beyond sentence_free that make one break
+sentence_weight = 1.0   # PROVISIONAL: cost of one break of sentence
