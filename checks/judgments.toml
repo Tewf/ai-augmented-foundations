@@ -200,3 +200,24 @@ path = "AGENTS.md"
 question = "section 'House conventions' is far from every other section (0.24): a second role?"
 file = "07ec04f89499"
 answer = "No: `House conventions` is one more rule for the person changing the repository, like the other sections of this contributor guide; it is far in meaning only because it is about dashes and commit subjects."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "7a75f3bfcd7a"
+answer = "No: the workflow runs the config's checks and the `unittest` step of the local checks, so a new check changes both; the config is read by the runner and the workflow only calls the runner, and the two folders are fixed by the extension contract and by GitHub."
+
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d1076676d952"
+answer = "Non : chaque nouvelle fiche ajoute une ligne à `Contenu` de la page d'accueil et une ligne au README de `decisions`; la page renvoie vers le dossier par un lien et ne recopie pas ses fiches."
+
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "6fa13c150b5f"
+answer = "No: each new record adds a row to `Contents` on the front page and a row to the README of `decisions`. The front page links the folder and does not copy its records."
