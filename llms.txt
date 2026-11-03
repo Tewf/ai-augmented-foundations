@@ -29,3 +29,9 @@ Each page's markdown source is served at the same path with a .md extension.
 
 - [Bayesian optimisation](https://tewf.github.io/ai-augmented-foundations/evidence/bayesian-optimisation/README.md): a project as the optimisation of an unknown objective, the choice of the next step, the stop that follows, and a worked model on the family's own runs
 - [Worked model](https://tewf.github.io/ai-augmented-foundations/evidence/bayesian-optimisation/worked-model.md): the family's runs as evaluations, with the policy each would choose
+
+## Design
+
+- [The guide](https://tewf.github.io/ai-augmented-foundations/design/guide.md): a project as a sequential decision problem under an unknown objective, the field's solutions mapped onto the family's setup, a guide designed to propose and never decide, and the verdict not to build it yet
+- [The trace](https://tewf.github.io/ai-augmented-foundations/design/trace.md): every job of the family's first two days, with kind, cost and outcome
+- [The replay](https://tewf.github.io/ai-augmented-foundations/design/replay.md): which next step each policy would have proposed on the trace, and where the value of information stops

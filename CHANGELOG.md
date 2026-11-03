@@ -11,6 +11,9 @@ A pin move is recorded here, not in decisions/.
   It has 39 new sources, a named baseline, and a worked model on the family's own runs, a program with its inputs and 20 unit tests.
 - Decision 0005, which reads the project as Bayesian optimisation and derives the stopping rule from the value of information.
 - A step in the checks workflow that runs the worked model's unit tests.
+- A design of a guide that proposes the next step: the problem modelled, the field's solutions mapped onto the setup, the guide designed, and a verdict ([design](design/guide.md)).
+- A trace of the family's first two days, 39 rows ([trace](design/trace.md)), and a replay program on it with 36 unit tests ([replay](design/replay.md)).
+- Decision 0006, which does not build the guide yet and states the bar for a spike.
 
 ### Changed
 

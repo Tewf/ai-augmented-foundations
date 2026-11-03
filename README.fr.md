@@ -12,14 +12,16 @@ Cette page en anglais : [README.md](README.md). Les deux versions suivent le mê
 
 > **État (2026-11-03) :** version 0.1.0 plus un troisième topic non publié. Construit : la première revue de
 > littérature, en trois topics (82 sources nouvelles et 7 reprises de revues sœurs, lues par résumé ou notice) avec ses
-> références nommées, un coût candidat d'un arbre de topics calculé sur les huit arbres de la famille, un modèle travaillé
-> du prochain pas sur les exécutions de la famille, trois principes chacun avec une vérification, et 69 tests unitaires
-> (49 des deux vérifications, 20 du modèle). Ouvert : rien ne valide le coût candidat, l'écart à l'optimum est calculé sur
-> trois exécutions enregistrées dont aucune n'est marquée acceptée, le modèle repose sur huit points et aucune
-> implémentation de référence n'a été lancée, et il n'y a pas encore de forme. Le nom reste
-> provisoire : la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et
-> ne propose aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat
-> nouveau.
+> références nommées. Aussi construits : un coût candidat d'un arbre de topics calculé sur les huit arbres de la
+> famille, et un modèle travaillé du prochain pas sur les exécutions de la famille. Un plan d'un guide qui propose le
+> prochain pas vient avec une trace des deux premiers jours de la famille et un rejeu dessus. Trois principes ont
+> chacun une vérification, et 105 tests unitaires tournent (49 des deux vérifications, 20 du modèle, 36 du rejeu).
+> Ouvert : rien ne valide le coût candidat. L'écart à l'optimum est calculé sur trois exécutions enregistrées dont
+> aucune n'est marquée acceptée. Le modèle repose sur huit points et aucune implémentation de référence n'a été lancée.
+> Le rejeu repose sur 36 tâches et ses résultats sont la lecture d'une seule personne, donc le guide n'est pas construit
+> (décision 0006). Il n'y a pas encore de forme. Le nom reste provisoire : la revue a trouvé que le domaine dit
+> puissance d'expression et arrêt anytime, non complet et converge, et ne propose aucun renommage. Ce n'est ni une norme
+> officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -151,6 +153,7 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 - **Fini.** Ce que la famille appellera « fini » pour un projet, et si un programme peut le dire.
 - **Prochain pas.** Quel pas vient ensuite si le but est une fonction inconnue, et quand s'arrêter. Répondu en partie :
   la [revue](evidence/bayesian-optimisation/) et un [modèle travaillé](evidence/bayesian-optimisation/worked-model.md) sur huit points.
+  Un [guide](design/guide.md) qui le propose a été conçu et rejoué sur la trace de la famille ; il n'a pas fait mieux que le hasard, donc il n'est [pas encore construit](decisions/0006-do-not-build-the-guide-yet.md).
 
 ## Vérifier
 
@@ -159,7 +162,7 @@ git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics 
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
 
-La CI exécute d'abord les tests unitaires des deux vérifications et du modèle travaillé, puis les mêmes vérifications, à chaque push, et une exécution échoue à la première erreur
+La CI exécute d'abord les tests unitaires des deux vérifications, du modèle travaillé et du rejeu, puis les mêmes vérifications, à chaque push, et une exécution échoue à la première erreur
 ([checks.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/checks.yml)). Chaque push
 sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](https://tewf.github.io/ai-augmented-foundations/)
 ([pages.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/pages.yml)).
@@ -171,6 +174,8 @@ sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](ht
 | [standard.md](standard.md) | la fiche : les trois principes que les revues ont gradués, chacun avec son grade, ses preuves et sa vérification |
 | [principles](principles/) | un fichier par principe, en deux groupes : expressiveness et convergence |
 | [evidence](evidence/) | la première revue en trois topics, expressiveness, convergence et Bayesian optimisation, le coût candidat sur la famille, le modèle travaillé du prochain pas, et la bibliographie |
+| [design](design/) | le guide qui propose le prochain pas : [le problème modélisé, les solutions projetées, le plan et le verdict](design/guide.md), [la trace de deux jours](design/trace.md) et [le rejeu](design/replay.md) |
+| [guide](guide/) | la trace comme données et [le programme de rejeu](guide/replay.py), avec 36 tests unitaires |
 | [checks](checks/) | la config et les vérifications locales `topic-cost` et `optimality-gap`, avec leurs tests unitaires |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 

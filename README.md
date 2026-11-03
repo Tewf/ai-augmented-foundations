@@ -11,13 +11,17 @@ The members hold the method; this repository studies it with the tools of logic,
 This page in French: [README.fr.md](README.fr.md).
 
 > **Status (2026-11-03):** version 0.1.0 plus an unreleased third topic. Built: the first literature review, in three
-> topics (82 new sources and 7 linked from sibling reviews, read by abstract or record) with its baselines named, a
-> candidate cost of a tree of topics computed on the family's eight trees, a worked model of the next step on the
-> family's own runs, three principles each with a check, and 69 unit tests (49 of the two checks, 20 of the model).
-> Open: nothing validates the candidate cost, the optimality gap is computed on three recorded runs and none is marked
-> accepted, the worked model rests on eight points and no reference implementation was run, and there are no shapes yet. The name is still provisional: the review found that the field says
-> expressive power and anytime stopping, not complete and converges, and proposes no rename. It is not an official
-> standard, not a peer-reviewed study and not a new result.
+> topics (82 new sources and 7 linked from sibling reviews, read by abstract or record) with its baselines named.
+> Also built: a candidate cost of a tree of topics computed on the family's eight trees, and a worked model of the next
+> step on the family's own runs. A design of a guide that proposes the next step comes with a trace of the family's
+> first two days and a replay on it. Three principles each have a check, and 105 unit tests run (49 of the two checks,
+> 20 of the model, 36 of the replay).
+> Open: nothing validates the candidate cost. The optimality gap is computed on three recorded runs and none is marked
+> accepted. The worked model rests on eight points and no reference implementation was run. The replay rests on 36 jobs
+> and its outcomes are one reader's, so the guide is not built (decision 0006). There are no shapes yet.
+> The name is still provisional: the review found that the field says expressive power and anytime stopping, not
+> complete and converges, and proposes no rename. It is not an official standard, not a peer-reviewed study and not a
+> new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -146,6 +150,7 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 - **Done.** What the family will call "done" for a project, and whether a program can tell.
 - **Next step.** Which step comes next if the goal is an unknown function, and when to stop. Answered in part: the
   [review](evidence/bayesian-optimisation/) and a [worked model](evidence/bayesian-optimisation/worked-model.md) on eight points.
+  A [guide](design/guide.md) that proposes it was designed and replayed on the family's trace of two days; it did not beat chance, so it is [not built yet](decisions/0006-do-not-build-the-guide-yet.md).
 
 ## Check it
 
@@ -154,7 +159,7 @@ git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics 
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
 
-CI first runs the unit tests of the two checks and of the worked model, then the same checks, on every push, and a run fails on any error
+CI first runs the unit tests of the two checks, of the worked model and of the replay, then the same checks, on every push, and a run fails on any error
 ([checks.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/checks.yml)). Every push
 to master also renders the site, [tewf.github.io/ai-augmented-foundations](https://tewf.github.io/ai-augmented-foundations/)
 ([pages.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/pages.yml)).
@@ -166,6 +171,8 @@ to master also renders the site, [tewf.github.io/ai-augmented-foundations](https
 | [standard.md](standard.md) | the card: the three principles the reviews graded, each with its grade, evidence and check |
 | [principles](principles/) | one file per principle, in two groups: expressiveness and convergence |
 | [evidence](evidence/) | the first review in three topics, expressiveness, convergence and Bayesian optimisation, the candidate cost on the family, the worked model of the next step, and the bibliography |
+| [design](design/) | the guide that proposes the next step: [the problem modelled, the solutions mapped, the design and the verdict](design/guide.md), [the trace of two days](design/trace.md) and [the replay](design/replay.md) |
+| [guide](guide/) | the trace as data and [the replay program](guide/replay.py), with 36 unit tests |
 | [checks](checks/) | the config and the local checks `topic-cost` and `optimality-gap`, with their unit tests |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 

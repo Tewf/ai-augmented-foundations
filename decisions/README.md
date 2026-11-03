@@ -7,6 +7,7 @@ decision in one sentence under its title, then its status, context, decision and
 
 | Record | Summary |
 |---|---|
+| [0006 Do not build the guide yet](0006-do-not-build-the-guide-yet.md) | The guide is not built; the family writes one trace row per job and reruns the replay when about thirty rows with the person's verdicts exist |
 | [0005 The project as optimisation of an unknown objective](0005-the-project-as-optimisation-of-an-unknown-objective.md) | The project is read as Bayesian optimisation, and the stopping rule is derived from the value of information |
 | [0004 Which findings became principles](0004-which-findings-became-principles.md) | Three findings became principles with a check each; the others stay findings, and the cost measure becomes a check |
 | [0003 A candidate cost of a tree of topics](0003-a-candidate-cost-of-a-tree-of-topics.md) | The cost is computed from depth, children, the run before a list and the longest sentence, every weight provisional |
