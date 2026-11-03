@@ -13,6 +13,9 @@ project:
     - evidence/bayesian-optimisation/worked-model.toml
     - evidence/bayesian-optimisation/test_worked_model.py
     - evidence/convergence/runs.toml
+    - guide/replay.py
+    - guide/trace.toml
+    - guide/test_replay.py
 
 website:
   title: "AI-augmented foundations"

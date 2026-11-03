@@ -1,0 +1,479 @@
+# The family's trace of two days (2026-11-02 and 2026-11-03), one row per job, read from the maintainer's log of two days
+# and the notes each job left. It is the first dataset of the guide (design/guide.md, part one).
+#
+# wave:   the launch cluster of the job's brief, from the brief's file time. A wave is a decision point of the maintainer.
+# kind:   setup, review, audit, design, build, experiment or upkeep (defined in design/guide.md).
+# agents: how many agent runs the row holds (the brief says one repository per agent where it is more than one).
+# tokens_k: thousands of tokens of ONE agent run on the subscription. "recorded" is in the log; "estimate" is 230, the
+#         middle of the log's range for ten agents (137 to 326). PROVISIONAL: the log keeps no per-job count for most jobs.
+# dollars: spend on a paid API outside the subscription, where the log records it; blank otherwise. Not in the replay's cost.
+# moved:  1 if a later job or record names this job's output as the reason for a change (a grade, a design, a claim, a
+#         rule) that stands at the end of the log. kept: 1 if the job's headline result stands at the end of the log.
+#         Both are the reading of whoever wrote this file, not the maintainer's judgment. Blank: no outcome yet, or outside
+#         the family; such a row counts for what was run, never for what was learned.
+# in_family: false for work on another project; the replay leaves it out.
+
+[[job]]
+id = "family-setup"
+wave = 0
+kind = "setup"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "nine public repositories with their skeleton, pins and Pages"
+changed = "nothing that existed"
+moved = 0
+kept = 1
+
+[[job]]
+id = "tsp-baselines"
+wave = 0
+kind = "build"
+in_family = false
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "three baseline solvers and their tests, on coursework"
+changed = "the conventions for how code is generated"
+
+[[job]]
+id = "logo-bottles"
+wave = 0
+kind = "build"
+in_family = false
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a logo and bottle models for a business project"
+changed = "a design register entry"
+
+[[job]]
+id = "ide-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a review of 28 sources and a named baseline (an open extension)"
+changed = "two earlier notes were corrected; the build would start from the baseline"
+moved = 1
+kept = 1
+
+[[job]]
+id = "project-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 250
+tokens_source = "recorded"
+produced = "a review of 39 sources; the field name human-AI teaming kept"
+changed = "the design document of the method; one push held for a hook until the maintainer allowed one cited title"
+moved = 1
+kept = 1
+
+[[job]]
+id = "agents-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a review of 35 sources; baseline the arrangement of 2026-10-29"
+changed = "its third finding (the brief has a convention and no test) set the brief test"
+moved = 1
+kept = 1
+
+[[job]]
+id = "foundations-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a review of 34 sources in two topics; baseline the maintainer's exact optimisation"
+changed = "set the cost measure, and later the reframe as an unknown objective"
+moved = 1
+kept = 1
+
+[[job]]
+id = "project-method-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a review of 38 sources; baseline the six design-science activities"
+changed = "set the project shape and its check"
+moved = 1
+kept = 1
+
+[[job]]
+id = "hub-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a review of 23 sources; the name kept; an overlap check, 24 tests"
+changed = "the overlap check later gained a semantic pass"
+moved = 1
+kept = 1
+
+[[job]]
+id = "cases-review"
+wave = 1
+kind = "review"
+agents = 1
+tokens_k = 326
+tokens_source = "recorded"
+produced = "a review of 37 sources and a first case with a measures program"
+changed = "the second case reused the program"
+moved = 1
+kept = 1
+
+[[job]]
+id = "family-rules"
+wave = 1
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "six rule pages, a weekly audit of every member, 17 tests"
+changed = "nothing later cites a change it caused"
+moved = 0
+kept = 1
+
+[[job]]
+id = "project-design"
+wave = 2
+kind = "design"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a design document of the method, with a figure"
+changed = "revised after the IDE design named four gaps in it: a brief shape, a start-file name, ten file kinds"
+moved = 1
+kept = 1
+
+[[job]]
+id = "blueprint-first-build"
+wave = 2
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a proof as topics, a Lake project, a link check with 18 tests; the proof was not run here (the cache did not download)"
+changed = "the proof was checked later in CI"
+moved = 0
+kept = 1
+
+[[job]]
+id = "cases-second-case"
+wave = 2
+kind = "experiment"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a second case: 33 commits, 16 records, 6 decisions that reached the person, 5 stalls"
+changed = "an optional argument added to the measures program"
+moved = 0
+kept = 1
+
+[[job]]
+id = "review-audits"
+wave = 2
+kind = "audit"
+agents = 7
+tokens_k = 137
+tokens_source = "estimate"
+produced = "a claim audit of seven reviews"
+changed = "about 67 rows correct, 14 imprecise and 2 wrong fixed, about 30 unverifiable"
+moved = 1
+kept = 1
+
+[[job]]
+id = "foundations-cost-measure"
+wave = 2
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a candidate cost of a tree of topics, computed on eight trees, 27 tests"
+changed = "found that depth gives 76 to 90 percent of the cost; nothing validates the measure"
+moved = 0
+kept = 1
+
+[[job]]
+id = "brief-test-1"
+wave = 2
+kind = "experiment"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "30 free calls to a hosted small model: 0, 0 and 5 of 10 passed across three briefs"
+changed = "the headline (naming the checks lets a cheap model pass) was withdrawn by the second round"
+moved = 1
+kept = 0
+
+[[job]]
+id = "project-shape"
+wave = 2
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a project shape and a check, 19 tests"
+changed = "no later change cites it"
+moved = 0
+kept = 1
+
+[[job]]
+id = "blueprint-rest"
+wave = 3
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a comparator, a challenge file and an agreement file, 42 tests"
+changed = "the audit column was split in two when the maintainer said he cannot read the proof language"
+moved = 0
+kept = 1
+
+[[job]]
+id = "ide-design"
+wave = 3
+kind = "design"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a design document for a thin extension, with a one-day spike of five measures"
+changed = "named four gaps in the method's design and one in the standard"
+moved = 1
+kept = 1
+
+[[job]]
+id = "ide-spike"
+wave = 4
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "readers, three views, a hand-over note; measures 1 to 3 pass; 4 and 5 run later"
+changed = "measure 5 failed on a 7B model and passed on two cloud models: the design kept its decision with a model-size condition"
+dollars = 0.28
+moved = 1
+kept = 1
+
+[[job]]
+id = "cards"
+wave = 4
+kind = "build"
+agents = 7
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a card of principles, shapes and checks in each of seven repositories"
+changed = "found that the card generator drops hand-written lines in llms.txt, passed to the standard's owner"
+moved = 1
+kept = 1
+
+[[job]]
+id = "agent-style"
+wave = 4
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a reader style for an agent, five overrides from the family's own evidence"
+changed = "every member's contributor file now names it"
+moved = 0
+kept = 1
+
+[[job]]
+id = "release"
+wave = 4
+kind = "upkeep"
+agents = 3
+tokens_k = 230
+tokens_source = "estimate"
+produced = "nine repositories released at 0.1.0 with tests in CI"
+changed = "stale citation abstracts fixed"
+moved = 0
+kept = 1
+
+[[job]]
+id = "apply-here"
+wave = 4
+kind = "upkeep"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "the family's shapes applied to the maintainer's own machine configuration"
+changed = "the shapes were then widened because the real practice failed them"
+moved = 0
+kept = 1
+
+[[job]]
+id = "shapes-meet-practice"
+wave = 4
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "memory shapes widened after 492 refusals on 164 real memories"
+changed = "the practice here wins over the shape"
+moved = 1
+kept = 1
+
+[[job]]
+id = "method-comparison"
+wave = 5
+kind = "experiment"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "30 sessions on a small cloud model: 0 of 15 alone, 15 of 15 with the method, confounded"
+changed = "the next measurement is the bare arm given the same information"
+dollars = 0.31
+moved = 1
+kept = 1
+
+[[job]]
+id = "brief-test-2"
+wave = 5
+kind = "experiment"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "180 calls, two tiers, a held-out judge: 0, 30 and 29 of 60"
+changed = "round one's 5 of 10 was fitting visible tests; the grade was lowered in five places"
+moved = 1
+kept = 1
+
+[[job]]
+id = "standard-changes"
+wave = 5
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "the standard released at 1.20.0: a verdicts file and a hand marker, 137 tests"
+changed = "every member's pin was raised to it"
+moved = 1
+kept = 1
+
+[[job]]
+id = "overlap-semantic"
+wave = 5
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a semantic pass on scope rows, threshold 0.70, 8 tests"
+changed = "one pair flagged"
+moved = 0
+kept = 1
+
+[[job]]
+id = "review-depth"
+wave = 5
+kind = "audit"
+agents = 7
+tokens_k = 230
+tokens_source = "estimate"
+produced = "forward citations and a second grey rater on seven reviews; agreement kappa 0 to 0.25"
+changed = "two to nine forward works added each"
+moved = 0
+kept = 1
+
+[[job]]
+id = "topic-records"
+wave = 5
+kind = "audit"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a check of two records numbered alike"
+changed = "nothing: the finding was stale"
+moved = 0
+kept = 1
+
+[[job]]
+id = "ide-build"
+wave = 6
+kind = "build"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "the extension: three views, five commands, 18 reader tests and 9 view tests"
+changed = "publishing waits for the maintainer"
+moved = 0
+kept = 1
+
+[[job]]
+id = "public-repos-audit"
+wave = 6
+kind = "audit"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "an audit of fourteen older public repositories"
+changed = "dead links, a stale status, a red CI and a truncated DOI fixed"
+moved = 1
+kept = 1
+
+[[job]]
+id = "machine-obeys-standards"
+wave = 6
+kind = "upkeep"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "the maintainer's machine loads the cards each session, and a hook refuses a broken start file"
+changed = "nothing cited later"
+moved = 0
+kept = 1
+
+[[job]]
+id = "org-rework"
+wave = 7
+kind = "upkeep"
+in_family = false
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a split of a business project's notes into an organisation"
+changed = "not read: outside the family"
+
+[[job]]
+id = "foundations-next-step"
+wave = 7
+kind = "review"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "a review of 39 sources on Bayesian optimisation and a worked model on eight points"
+changed = "the stop is now derived from the value of information; one principle gained its derivation"
+moved = 1
+kept = 1
+
+[[job]]
+id = "three-more-repos"
+wave = 7
+kind = "setup"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "three public repositories, scope only"
+changed = "both hubs updated"
+moved = 0
+kept = 1
+
+[[job]]
+id = "guide-design"
+wave = 7
+kind = "design"
+agents = 1
+tokens_k = 230
+tokens_source = "estimate"
+produced = "this document and the replay"
+changed = "not yet"
