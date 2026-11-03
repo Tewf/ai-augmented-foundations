@@ -228,3 +228,101 @@ path = "evidence/convergence/sources.md"
 question = "section 'Left out, with the reason' is far from every other section (0.22): a second role?"
 file = "cb029fa1f272"
 answer = "No second role: `Left out, with the reason` records what the pool excludes, which belongs to a file that lists what the pool holds, and the section is a short list."
+
+[[answer]]
+check = "logical-lines"
+path = "README.fr.md"
+question = "108 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "b2dd5bf13ee2"
+answer = "Il peut rester : son rôle est la page d'accueil, une phrase, `État`, `L'adopter` et la carte des parties, sans partie en double."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "104 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "3376a5dd7a57"
+answer = "It may stay: its role is the front page, one sentence, `Status`, `Take it` and the map of the parts, with no part held twice."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/config.toml in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "8704939db11c"
+answer = "They stay apart: the workflow pins the standard and runs `Test the worked model` and `Test the local checks`, the config holds the tables the checks read; they changed together while the checks were added."
+
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with decisions/README.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "b2dd5bf13ee2"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contenu` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with decisions/README.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "3376a5dd7a57"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "b2dd5bf13ee2"
+answer = "One mode: understanding why. The numbered steps of `L'adopter` are a short section of a front page, not a second mode."
+
+[[answer]]
+check = "document-mode"
+path = "decisions/0005-the-project-as-optimisation-of-an-unknown-objective.md"
+question = "reads about equally as how-to and reference: one mode per document?"
+file = "ef9ca20dddd1"
+answer = "One mode: understanding why. `Decision` lists what was chosen, as every record does, and `Context` and `Consequences` give the reasons."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/bayesian-optimisation/position.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "68e09548d680"
+answer = "One mode: understanding what is known and what is not. The table under `What a project adds that a benchmark function lacks` is evidence for that, not a lookup page."
+
+[[answer]]
+check = "name-content"
+path = "standard.md"
+question = "the name 'standard' and the opening are far apart in meaning (0.19): does the name predict the content?"
+file = "6d051a0aec4f"
+answer = "Yes: `standard.md` is the name the extension contract gives the card, and its opening points to the standard it extends and to the `Principles` it adds; the low score is the short opening, not a mismatch."
+
+[[answer]]
+check = "section-cohesion"
+path = "AGENTS.md"
+question = "section 'House conventions' is far from every other section (0.24): a second role?"
+file = "54a3010de4f9"
+answer = "No second role: `House conventions` is the short list of the conventions the other sections apply, for whoever changes the repository."
+
+[[answer]]
+check = "section-cohesion"
+path = "evidence/bayesian-optimisation/sources.md"
+question = "section 'Left out, with the reason' is far from every other section (0.19): a second role?"
+file = "90712be2b625"
+answer = "No second role: `Left out, with the reason` closes the pool by saying what the flow above excluded, so the table of `Formal sources` can be read as complete."
+
+[[answer]]
+check = "co-change"
+path = "CHANGELOG.md"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "c34d505e0110"
+answer = "They stay apart and already link: the `Unreleased` section lists each record added, and the folder README lists the record, so each new record touches both."
+
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with decisions/README.md in 5 commits (83% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "b2dd5bf13ee2"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contenu` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with decisions/README.md in 5 commits (83% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "3376a5dd7a57"
+answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
