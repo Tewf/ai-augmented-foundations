@@ -11,6 +11,11 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814
    its baseline. A later review adds a topic folder there. The frame step found no reason to rename the repository.
 3. A fact that belongs to a neighbour is linked, never copied. A choice that shapes the repository gets a record in
    [decisions/](decisions/).
+4. The card is [standard.md](standard.md). A principle is a file `principles/<group>/<name>.md` with the lines Claim,
+   Grade, Evidence, Check and Reader styles; its grade is never higher than its review's, and its Check names a
+   registered check. [Decision 0004](decisions/0004-which-findings-became-principles.md) says which findings became
+   principles. The shapes: none of its own; [cost on the family](evidence/expressiveness/cost-on-the-family.md) is a
+   filled example of the standard's report shape.
 
 ## Rules for claims
 
@@ -46,7 +51,10 @@ python3 checks/out/standard/checks/run.py . --tiers program,meaning --judge flag
 - Fix every error. Read every warning.
 - Answer the questions in `checks/out/needs-judgment.md` in `checks/judgments.toml`, each answer quoting in backticks
   a word or heading of its own file.
-- Keep [llms.txt](llms.txt), [README.md](README.md) and [README.fr.md](README.fr.md) in step.
+- Keep [README.md](README.md) and [README.fr.md](README.fr.md) in step.
+- Rebuild the card and the index after a principle changes: `python3 checks/out/standard/checks/program/standard_card.py . --write`
+  writes the table in [standard.md](standard.md) and [llms.txt](llms.txt) from the principle files. Nothing else in them is written by hand.
+- Run the unit tests of the local checks: `python3 -m unittest discover -s checks`.
 - A pin raise goes in [CHANGELOG.md](CHANGELOG.md), not in decisions/.
 
 ## House conventions

@@ -11,7 +11,8 @@ optimum. Les membres tiennent la méthode ; ce dépôt l'étudie avec les outils
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
 > **État (2026-11-03) :** la première revue de littérature est écrite, en deux topics, comme première passe : 34 sources
-> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice. Elle nomme sa référence. Un coût candidat d'un arbre de topics est calculé sur les huit arbres de la famille ; rien ne le valide. Le nom reste provisoire :
+> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice. Elle nomme sa référence. Un coût candidat d'un arbre de topics est calculé sur les huit arbres de la famille ; rien ne le valide. Trois principes sont écrits à partir des
+> constats gradués, chacun avec une vérification. Le nom reste provisoire :
 > la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et ne propose
 > aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
@@ -125,7 +126,10 @@ sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](ht
 
 | Partie | Résumé |
 |---|---|
+| [standard.md](standard.md) | la fiche : les trois principes que les revues ont gradués, chacun avec son grade, ses preuves et sa vérification |
+| [principles](principles/) | un fichier par principe, en deux groupes : expressiveness et convergence |
 | [evidence](evidence/) | la première revue en deux topics, expressiveness et convergence, le coût candidat sur la famille, et la bibliographie |
+| [checks](checks/) | la config et les vérifications locales `topic-cost` et `optimality-gap`, avec leurs tests unitaires |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

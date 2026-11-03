@@ -12,7 +12,8 @@ This page in French: [README.fr.md](README.fr.md).
 
 > **Status (2026-11-03):** the first literature review is written, in two topics, as a first pass: 34 new sources and 6
 > linked from sibling reviews, read by abstract or record. It names its baseline. A candidate cost of a tree of topics is
-> computed on the family's eight trees; nothing validates it. The name is still provisional: the review
+> computed on the family's eight trees; nothing validates it. Three principles are written from the
+> graded findings, each with a check. The name is still provisional: the review
 > found that the field says expressive power and anytime stopping, not complete and converges, and proposes no rename.
 > It is not an official standard, not a peer-reviewed study and not a new result.
 >
@@ -125,7 +126,10 @@ to master also renders the site, [tewf.github.io/ai-augmented-foundations](https
 
 | Part | Summary |
 |---|---|
+| [standard.md](standard.md) | the card: the three principles the reviews graded, each with its grade, evidence and check |
+| [principles](principles/) | one file per principle, in two groups: expressiveness and convergence |
 | [evidence](evidence/) | the first review in two topics, expressiveness and convergence, the candidate cost on the family, and the bibliography |
+| [checks](checks/) | the config and the local checks `topic-cost` and `optimality-gap`, with their unit tests |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

@@ -158,3 +158,45 @@ path = "README.fr.md"
 question = "reads about equally as tutorial and reference: one mode per document?"
 file = "437d6222ff2c"
 answer = "Référence : la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`; la seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "tree-shape"
+path = "checks/local"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `checks/local` is the folder the extension contract names for a repository's own checks (reader-ergonomics extending.md, Local checks); it holds `topic_cost.py` and `optimality_gap.py`, one module per check, and the runner reads it there."
+
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with decisions/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d1076676d952"
+answer = "Non : elles bougent ensemble parce que chaque nouvelle fiche ajoute une ligne à `Contenu` de la page d'accueil et une ligne au README de `decisions`; la page d'accueil renvoie vers le dossier par un lien et ne recopie pas ses fiches."
+
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with decisions/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "6fa13c150b5f"
+answer = "No: they change together because each new record adds a row to `Contents` on the front page and a row to the README of `decisions`. The front page links the folder and does not copy its records."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "d1076676d952"
+answer = "Référence : la page d'accueil, lue pour `Où il se place`, `Périmètre` et `Ce que la revue a trouvé`; la seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "name-content"
+path = "standard.md"
+question = "the name 'standard' and the opening are far apart in meaning (0.20): does the name predict the content?"
+file = "4995ae2aa65c"
+answer = "Yes: `standard.md` is the name the extension contract gives the card, and its opening points to the standard it extends and to the `Principles` it adds; the low score is the short opening, not a mismatch."
+
+[[answer]]
+check = "section-cohesion"
+path = "AGENTS.md"
+question = "section 'House conventions' is far from every other section (0.24): a second role?"
+file = "07ec04f89499"
+answer = "No: `House conventions` is one more rule for the person changing the repository, like the other sections of this contributor guide; it is far in meaning only because it is about dashes and commit subjects."
