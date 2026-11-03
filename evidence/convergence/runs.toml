@@ -1,0 +1,22 @@
+# The three runs of the maintainer's exact optimisation that carry a bound, as the baseline reports them (baseline.md).
+# The numbers were read in the run records and not rerun. The check optimality-gap reads this file.
+# Objective is the cost J of the best result found, bound the proved lower bound. No run is marked accepted:
+# the gap is computed here, the decision to stop is not.
+
+[[run]]
+name = "three levels, 101 files, no lexical term"
+objective = 406
+bound = 406
+status = "optimal"
+
+[[run]]
+name = "two levels, 101 files, 180 seconds"
+objective = 423
+bound = 353
+status = "feasible"
+
+[[run]]
+name = "two levels, 101 files, lexical term, 300 seconds"
+objective = 1108
+bound = 495
+status = "feasible"

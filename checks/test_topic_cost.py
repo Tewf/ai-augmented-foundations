@@ -154,15 +154,59 @@ class OnDisk(unittest.TestCase):
     def test_the_repository_config_loads_with_every_key(self):
         settings = tc.load_settings(HERE.parent / "config.toml")
         for key in ["depth_weight", "nesting_weight", "fan_free", "fan_weight", "run_free", "run_step", "run_weight",
-                    "sentence_free", "sentence_step", "sentence_weight"]:
+                    "sentence_free", "sentence_step", "sentence_weight", "topic_budget"]:
             self.assertIn(key, settings)
 
     def test_every_tunable_is_tagged(self):
         text = (HERE.parent / "config.toml").read_text()
-        block = text.split("[topic_cost]")[1]
+        block = text.split("[topic_cost]")[1].split("\n[")[0]
         lines = [l for l in block.splitlines() if "=" in l]
-        self.assertEqual(len(lines), 10)
+        self.assertEqual(len(lines), 11)
         self.assertTrue(all("PROVISIONAL" in l for l in lines))
+
+
+class TheCheck(unittest.TestCase):
+    CONFIG = "[topic_cost]\nfan_free = 7  # PROVISIONAL: a guess\nfan_weight = 1.0\n[other]\nrun_free = 1\n"
+
+    def test_it_is_a_check(self):
+        self.assertEqual(tc.NAME, "topic-cost")
+        self.assertFalse(tc.EXACT)
+
+    def test_an_untagged_tunable_is_named_with_its_line(self):
+        self.assertEqual(tc.untagged(self.CONFIG), [(3, "fan_weight")])
+
+    def test_other_tables_and_comments_are_not_read(self):
+        self.assertEqual(tc.untagged("[topic_cost]\n# fan_free = 1\n[other]\nfan_free = 1\n"), [])
+
+    def test_the_repository_config_has_no_untagged_tunable(self):
+        self.assertEqual(tc.untagged((HERE.parent / "config.toml").read_text()), [])
+
+    def test_every_tunable_has_a_default(self):
+        for key in tc.TUNABLES:
+            self.assertIn(key, tc.DEFAULTS)
+
+    def test_the_check_reports_an_error_and_a_warning(self):
+        root = Path(tempfile.mkdtemp())
+        try:
+            (root / "checks").mkdir()
+            (root / "checks" / "config.toml").write_text(self.CONFIG)
+            (root / "README.md").write_text("# Root\n\nSummary.\n")
+            for i in range(10):
+                (root / f"t{i}.md").write_text("# T\n\nSummary.\n")
+            found = tc.check(root, {"topic_cost": {"topic_budget": 2.0}})
+            self.assertEqual([f.kind for f in found], ["error", "warning"])
+            self.assertEqual((found[0].path, found[0].line), ("checks/config.toml", 3))
+            self.assertEqual(found[1].path, "README.md")
+        finally:
+            shutil.rmtree(root)
+
+    def test_a_tree_within_budget_is_silent(self):
+        root = Path(tempfile.mkdtemp())
+        try:
+            (root / "README.md").write_text("# Root\n\nSummary.\n")
+            self.assertEqual(tc.check(root, {}), [])
+        finally:
+            shutil.rmtree(root)
 
 
 if __name__ == "__main__":

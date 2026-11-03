@@ -28,7 +28,7 @@ family = ["reader-ergonomics",
           "reader-ergonomics-blueprint"]
 shared_links = []
 
-# The candidate cost of a tree of topics (checks/local/topic_cost.py, decision 0003). Nothing validates any value here.
+# The candidate cost of a tree of topics (checks/local/topic_cost.py, decisions 0003 and 0004). Nothing validates any value here.
 [topic_cost]
 depth_weight = 1.0      # PROVISIONAL: cost of each level of depth; no study sets it
 nesting_weight = 1.0    # PROVISIONAL: extra cost of a break per level of depth; 1 is Cognitive Complexity's own
@@ -40,3 +40,10 @@ run_weight = 1.0        # PROVISIONAL: cost of one break of run
 sentence_free = 35      # PROVISIONAL: words of the longest sentence that cost nothing (the family's writing rule)
 sentence_step = 10      # PROVISIONAL: words of sentence beyond sentence_free that make one break
 sentence_weight = 1.0   # PROVISIONAL: cost of one break of sentence
+topic_budget = 12.0     # PROVISIONAL: the cost of one topic past which the check topic-cost warns; the family's costliest are 19, 11 and 11
+
+# The check optimality-gap (checks/local/optimality_gap.py, decision 0004): which files hold runs with a bound, and the
+# gap a run may be accepted at when its own record states none.
+[optimality_gap]
+records = ["evidence/convergence/runs.toml"]
+tolerance = 0.05   # PROVISIONAL: the largest relative gap at which a run is accepted; nothing sets it, the review only says to state one

@@ -1,8 +1,13 @@
-"""Topic cost: one candidate number for how much a tree of topics asks of a reader.
+"""Topic cost: one candidate number for how much a tree of topics asks of a reader, and the check that keeps it honest.
 
-NOT A CHECK. It has no NAME, so the standard's runner skips it; run it by hand:
+As a command it prints the cost of any repositories' trees:
 
     python3 checks/local/topic_cost.py [--config checks/config.toml] [--markdown] REPOSITORY...
+
+As the check `topic-cost` (principle: computed cost, weights tagged PROVISIONAL) it reports two things on this
+repository: an error for each key of `[topic_cost]` in checks/config.toml whose line does not carry the word
+PROVISIONAL, and a warning for each topic whose cost passes `topic_budget`. The warning is a heuristic, since
+the cost is not validated. It fails no repository for its number.
 
 A **topic** and its **tree** are those of reader-ergonomics-topic's check: every markdown file is a topic, its parent
 is the README.md of the nearest folder above it that is a topic (for a README.md, of the folder above its own), and
@@ -27,7 +32,8 @@ so the same break deep in the tree costs more. Then
 and the cost of a tree is the sum of its topics' costs, as Cognitive Complexity sums a function's increments.
 Every weight and threshold is PROVISIONAL in checks/config.toml: no study has set one (decision 0003).
 
-What a run guarantees: the number is computed from the files, the same on every run, in time O(text).
+What a run guarantees: the number is computed from the files, the same on every run, in time O(text); and every
+weight and threshold in config is tagged as a guess.
 What it does not: that the number predicts reader effort. That is the open question of the finding "No cost of a tree
 of topics has been validated" (evidence/expressiveness/review.md, strand 4).
 """
@@ -41,6 +47,22 @@ import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
+try:
+    from framework.check_api import Finding
+except ModuleNotFoundError:  # run by hand or by the tests, without the standard's checks on the path
+    @dataclass(frozen=True)
+    class Finding:
+        check: str
+        path: str
+        line: int
+        message: str
+        kind: str = "error"
+
+NAME = "topic-cost"
+EXACT = False   # the budget warning is a heuristic; the tag error is certain and says kind="error" itself
+TUNABLES = ["depth_weight", "nesting_weight", "fan_free", "fan_weight", "run_free", "run_step", "run_weight",
+            "sentence_free", "sentence_step", "sentence_weight", "topic_budget"]
+
 DEFAULTS = {
     "depth_weight": 1.0,
     "nesting_weight": 1.0,
@@ -52,6 +74,7 @@ DEFAULTS = {
     "sentence_free": 35,
     "sentence_step": 10,
     "sentence_weight": 1.0,
+    "topic_budget": 12.0,
     "root": "README.md",
     "exclude": ["checks/", "LICENSES/", ".github/", "_standard/", "_site/", "node_modules/", ".quarto/"],
     "exclude_names": ["AGENTS.md", "CHANGELOG.md", "CODE_OF_CONDUCT.md"],
@@ -292,6 +315,36 @@ def table(trees: list[Tree]) -> str:
         rows.append(f"| {t.name} | {t.topics} | {t.max_depth} | {t.max_children} | {t.total:.1f} | {t.mean:.2f} "
                     f"| `{t.worst_path}` | {t.worst:.1f} |")
     return "\n".join(rows)
+
+
+def untagged(config_text: str) -> list[tuple[int, str]]:
+    """(line, key) of each tunable under [topic_cost] whose line lacks the word PROVISIONAL."""
+    found, inside = [], False
+    for number, line in enumerate(config_text.splitlines(), 1):
+        if line.startswith("["):
+            inside = line.strip() == "[topic_cost]"
+        elif inside and "=" in line and not line.lstrip().startswith("#"):
+            key = line.split("=")[0].strip()
+            if key in TUNABLES and "PROVISIONAL" not in line:
+                found.append((number, key))
+    return found
+
+
+def check(root: Path, config: dict) -> list[Finding]:
+    findings = []
+    path = root / "checks" / "config.toml"
+    if path.is_file():
+        for number, key in untagged(path.read_text(encoding="utf-8")):
+            findings.append(Finding(NAME, "checks/config.toml", number,
+                                    f"{key} is not tagged PROVISIONAL: no study sets a weight of the cost of a tree of topics"))
+    settings = {**DEFAULTS, **config.get("topic_cost", {})}
+    for topic in measure(root, settings):
+        if topic.cost > settings["topic_budget"]:
+            findings.append(Finding(NAME, topic.path, 1,
+                                    f"candidate cost {topic.cost:.1f} is past the budget {settings['topic_budget']}: depth {topic.depth}, "
+                                    f"{topic.children} children, a run of {topic.run} words, a longest sentence of {topic.sentence} "
+                                    f"(not validated: read it as a prompt, not a verdict)", "warning"))
+    return findings
 
 
 def main(argv: list[str] | None = None) -> int:
