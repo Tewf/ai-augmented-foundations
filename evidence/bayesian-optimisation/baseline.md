@@ -2,6 +2,8 @@
 
 Step 5. The review is finished because the baseline can be named.
 
+**Shape:** [baseline](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/baseline.md)
+
 ## The baseline
 
 - **Standard policy:** a Gaussian-process surrogate with noisy expected improvement. Reference implementation: BoTorch (Balandat 2020; BoTorch 2026), the acquisition `qLogNoisyExpectedImprovement`, driven through Ax for an experiment loop (Ax 2026, below the grey threshold).

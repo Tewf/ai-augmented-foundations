@@ -2,6 +2,8 @@
 
 Evidence against the readings in [review](review.md). None is deleted to make a claim stronger.
 
+**Shape:** [against](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/against.md)
+
 ## Against a computable cost
 
 - Scalabrino 2021: none of 121 metrics captured code understandability in the ratings used (secondary). A count is not a measure.

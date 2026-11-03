@@ -2,6 +2,8 @@
 
 Step 5. The review is finished because three baselines can be named.
 
+**Shape:** [baseline](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/baseline.md)
+
 ## B1: a tree with reference edges
 
 - What it is: the practice of DITA-style maps with reuse by reference, held by the topic's document-model review, and SKOS with broader and related links (Miles 2009).

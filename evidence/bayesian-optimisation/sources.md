@@ -2,6 +2,8 @@
 
 Thirty-nine works were added on 2026-11-03. See [protocol](protocol.md) for the searches and [frame](frame.md) for the terms. A grey source below 10 of 20 is an example of practice only.
 
+**Shape:** [sources](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/sources.md)
+
 ## Flow
 
 | Stage | Count |

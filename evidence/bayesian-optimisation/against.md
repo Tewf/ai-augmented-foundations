@@ -2,6 +2,8 @@
 
 Evidence against the readings in [review](review.md).
 
+**Shape:** [against](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/against.md)
+
 ## Against Bayesian optimisation for a project
 
 - Frazier 2018 limits the method to continuous domains of fewer than 20 dimensions and objectives that take minutes or hours. A project's space is a few structured ways of working.

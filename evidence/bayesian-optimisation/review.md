@@ -2,6 +2,8 @@
 
 Step 2. Surveys and textbooks first, then the seminal works, strand by strand. A number read in an abstract is marked (secondary) where the abstract is a summary. Grades are those of the standard.
 
+**Shape:** [review](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/review.md)
+
 ## The loop
 
 ![The runs so far are fitted by a surrogate, which scores each candidate step; if the gain over the remaining use is below the cost of a step the loop stops, otherwise the best step is run and adds a point to the runs.](the-loop.svg)

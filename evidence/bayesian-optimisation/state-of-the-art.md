@@ -2,6 +2,8 @@
 
 Step 3. The most adopted practice is kept apart from the best evidence, and what has been achieved from what is impossible or hard.
 
+**Shape:** [state of the art](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/state-of-the-art.md)
+
 | Sub-question | Most adopted | Best evidence | Measured how |
 |---|---|---|---|
 | N1 Next step | a Gaussian-process surrogate with expected improvement (BoTorch 2026; Optuna 2026) | Turner 2021: Bayesian optimisation beat random search on held-out tuning tasks | a challenge on tuning, not on projects |

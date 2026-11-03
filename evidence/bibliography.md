@@ -2,6 +2,8 @@
 
 Every work this repository cites, once: key, citation, and a stable link. A key names one work across the family.
 
+**Shape:** [references](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/references.md)
+
 | Key | Citation | Link |
 |---|---|---|
 | Angles 2008 | Angles, Gutierrez (2008). Survey of graph database models. ACM Computing Surveys 40(1). Abstract read | https://doi.org/10.1145/1322432.1322433 |

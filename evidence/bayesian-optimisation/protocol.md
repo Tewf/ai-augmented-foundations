@@ -2,6 +2,8 @@
 
 Below are the strings and counts behind the pool, with the terms in [frame](frame.md) and the included works in [sources](sources.md). Rules common to the topics: [method](../README.md#method).
 
+**Shape:** [protocol](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/protocol.md)
+
 ## 1. Why grey literature
 
 Answers yes to questions 1 to 6 of Garousi 2019, Table 4 (question 7 not measured). The reference implementations of the policies are software, and their makers document what they implement and how they stop.

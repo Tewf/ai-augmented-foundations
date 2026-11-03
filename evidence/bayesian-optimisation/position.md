@@ -2,6 +2,8 @@
 
 Step 4. "Nobody has done this" and "we have not done this here" are kept apart.
 
+**Shape:** [position](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/position.md)
+
 ## What is known
 
 - Choosing the next evaluation of an expensive unknown function has a full theory and tools: a surrogate, an acquisition function and a stopping rule (Shahriari 2016; Frazier 2018; Garnett 2023).

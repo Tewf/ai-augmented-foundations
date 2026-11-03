@@ -2,6 +2,8 @@
 
 Step 1, read on 2026-11-03. It states the problem of the loop and the field's names for its parts.
 
+**Shape:** [frame](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/frame.md)
+
 ## The problem in one sentence
 
 A project takes steps; each step costs tokens, time or money and returns a noisy reading of an objective nobody can write down; which step should come next, and when should the project stop?

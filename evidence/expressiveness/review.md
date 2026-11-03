@@ -2,6 +2,8 @@
 
 Step 2. Surveys first, then the works they lead to. Numbers come from abstracts or records unless a source is named as read in part, and are marked (secondary). Grades: measured, supported with caveat, convention, not supported.
 
+**Shape:** [review](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/review.md)
+
 ## Strand 0: existing reviews
 
 - No review of the expressiveness of a tree of topics was found.

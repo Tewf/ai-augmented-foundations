@@ -2,6 +2,8 @@
 
 Step 1, read on 2026-11-02: the problem, the terms, and the names the field uses.
 
+**Shape:** [frame](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/frame.md)
+
 ## The problem in one sentence
 
 Which problems can be written down as a tree of topics, which need a graph, and what a person pays in attention to read either.

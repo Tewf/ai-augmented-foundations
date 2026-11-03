@@ -2,6 +2,8 @@
 
 Two records are kept apart: most adopted (what people use) and best evidence (what a study or theorem gives). Upper bounds (what is achieved) are kept apart from lower bounds (what is impossible).
 
+**Shape:** [state of the art](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/state-of-the-art.md)
+
 | Sub-question | Most adopted | Best evidence | Measured how |
 |---|---|---|---|
 | X1 What a tree encodes | tree plus links: SKOS broader and related (Miles 2009) | Bodlaender 1998 for how tree-like a graph is | theorems on graphs |

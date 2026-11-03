@@ -2,6 +2,8 @@
 
 The pool of the review, read on 2026-11-02, and extended by forward citations on 2026-11-03. Searches are in [protocol](protocol.md); terms in [frame](frame.md). Below 10 of 20, a grey source is an example of practice only. Both grey sources were rated again on 2026-11-03 ([protocol](protocol.md), section 8); both stay above 10.
 
+**Shape:** [sources](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/sources.md)
+
 ## Flow
 
 | Stage | Count |

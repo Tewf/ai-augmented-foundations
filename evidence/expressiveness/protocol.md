@@ -2,6 +2,8 @@
 
 Search strings and counts for the expressiveness pool follow. Defined terms: [frame](frame.md). Included works: [sources](sources.md). Shared rules: [method](../README.md#method).
 
+**Shape:** [protocol](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/protocol.md)
+
 ## 1. Why grey literature
 
 Answers yes to questions 1 to 6 of Garousi 2019, Table 4 (question 7 not measured). Thesaurus and documentation models come from standards, no study of a tree of topics was found, and the code metrics sit in industrial tools whose validation is separate.
