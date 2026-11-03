@@ -20,7 +20,7 @@ Two records are kept apart: most adopted and best evidence. Upper bounds (achiev
 
 - Minimising the total-depth objective on partition trees is intractable in general (Hogemo 2021).
 - No rule that aggregates rankings meets Arrow's fair conditions (Arrow 1950, secondary).
-- The classic stopping rules need a known distribution of future observations. No source gives a rule when the distribution is unknown (secondary, from abstracts).
+- The classic stopping rules need a known distribution of future observations. With a sample of items a rule exists (Correa 2023), and a rule can be learned over repeated tasks (Svegliato 2020; Sung 2021). No source gives a rule for one run with an unknown distribution (secondary, from abstracts).
 
 ## The two records
 

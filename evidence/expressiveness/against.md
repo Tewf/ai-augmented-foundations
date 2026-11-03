@@ -10,6 +10,7 @@ Evidence against the readings in [review](review.md). None is deleted to make a 
 
 ## Against cognitive load theory as the basis
 
+- Krieglstein 2022 finds that the correlations among the three load types partly contradict the theory's assumptions (secondary, abstract). The scales are reliable; their validity is not settled.
 - De Jong 2010 lists conceptual, methodological and application problems in the theory (secondary, abstract). The capacity limit is solid (Cowan 2001); the theory built on it is contested.
 - Cowan 2001 puts the limit at three to five chunks and says it holds only when chunks can be identified. What counts as a chunk in a tree of topics is not given.
 

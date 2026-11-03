@@ -10,7 +10,7 @@ optimum. Les membres tiennent la méthode ; ce dépôt l'étudie avec les outils
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03) :** version 0.1.0. Construit : la première revue de littérature, en deux topics (34 sources
+> **État (2026-11-03) :** version 0.1.0. Construit : la première revue de littérature, en deux topics (43 sources
 > nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice) avec ses références nommées, un coût candidat d'un
 > arbre de topics calculé sur les huit arbres de la famille, trois principes chacun avec une vérification, et 49 tests
 > unitaires des deux vérifications. Ouvert : rien ne valide le coût candidat, l'écart à l'optimum est calculé sur trois
@@ -106,7 +106,8 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
    langages formels (Höller 2014). Aucun problème qui n'ait besoin ni d'arbre ni de graphe n'a été trouvé.
 2. **Aucun coût d'un arbre de topics n'est validé.** Pour le code, 121 métriques n'ont pas capté la compréhensibilité
    (Scalabrino 2021), et un seul décompte, Cognitive Complexity, corrèle avec le temps de compréhension (Muñoz Barón
-   2020). Qu'un décompte d'imbrication prédise l'effort d'un lecteur sur des topics n'est pas testé. Un premier candidat, quatre
+   2020). Qu'un décompte d'imbrication prédise l'effort d'un lecteur sur des topics n'est pas testé. Les échelles de charge
+   déclarée sont fiables, mais une méta-analyse de 2022 trouve leur validité en partie contredite (Krieglstein 2022). Un premier candidat, quatre
    composantes combinées comme Cognitive Complexity combine imbrication et ruptures, est [calculé sur la famille](evidence/expressiveness/cost-on-the-family.md)
    et non validé ; la profondeur fournit l'essentiel de sa valeur.
 3. **Le domaine a le cadre de la convergence.** La satisfaction (satisficing), l'optimalité bornée et les algorithmes
@@ -115,8 +116,9 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 4. **L'optimum exact et l'arbre accepté diffèrent par nature.** Dans l'exécution du mainteneur, l'optimum était groupé
    par produit et l'arbre du propriétaire par étape. Pour le code, Candela 2016 demande si les développeurs visent l'optimum cohésion-couplage. S'arrêter
    à l'acceptable, et se servir de l'optimum comme borne.
-5. **Un programme peut tester « fini »** comme un critère écrit plus une tolérance sur l'écart d'optimalité. Aucune règle
-   d'arrêt n'a été trouvée pour une loi inconnue de ce que le prochain changement apporte.
+5. **Un programme peut tester « fini »** comme un critère écrit plus une tolérance sur l'écart d'optimalité. Des règles d'arrêt existent
+   avec un échantillon (Correa 2023) ou sur des tâches répétées (Svegliato 2020 ; Sung 2021). Aucune n'a été trouvée
+   pour une seule exécution à loi inconnue de ce que le prochain changement apporte.
 
 ## La référence
 

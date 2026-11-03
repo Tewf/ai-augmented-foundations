@@ -10,7 +10,7 @@ The members hold the method; this repository studies it with the tools of logic,
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03):** version 0.1.0. Built: the first literature review, in two topics (34 new sources and 6
+> **Status (2026-11-03):** version 0.1.0. Built: the first literature review, in two topics (43 new sources and 6
 > linked from sibling reviews, read by abstract or record) with its baselines named, a candidate cost of a tree of
 > topics computed on the family's eight trees, three principles each with a check, and 49 unit tests of the two checks.
 > Open: nothing validates the candidate cost, the optimality gap is computed on three recorded runs and none is marked
@@ -104,7 +104,8 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
    neither a tree nor a graph was found.
 2. **No cost of a tree of topics has been validated.** For code, 121 metrics failed to capture understandability
    (Scalabrino 2021), and one count, Cognitive Complexity, correlates with comprehension time (Muñoz Barón 2020).
-   Whether a nesting count predicts a reader's effort on topics is untested. A first candidate, four
+   Whether a nesting count predicts a reader's effort on topics is untested. Self-report load scales are reliable, but a
+   2022 meta-analysis finds their validity partly contradicted (Krieglstein 2022). A first candidate, four
    components combined as Cognitive Complexity combines nesting and breaks, is [computed on the family](evidence/expressiveness/cost-on-the-family.md)
    and not validated; depth supplies most of its value.
 3. **The field has the frame for convergence.** Satisficing, bounded optimality and anytime algorithms give quality as
@@ -112,8 +113,9 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 4. **The exact optimum and the accepted tree differ in kind.** In the maintainer's own run the optimum was grouped by
    product and the owner's tree by stage. For code, Candela 2016 asks whether developers pursue the cohesion-coupling optimum. Stop at acceptable, and
    use the optimum as a bound.
-5. **Done can be tested by a program** as a written criterion plus a tolerance on the optimality gap. No stopping rule
-   was found for an unknown distribution of what the next change brings.
+5. **Done can be tested by a program** as a written criterion plus a tolerance on the optimality gap. Stopping rules exist
+   given a sample (Correa 2023) or over repeated tasks (Svegliato 2020; Sung 2021). None was found for one run with an
+   unknown distribution of what the next change brings.
 
 ## The baseline
 

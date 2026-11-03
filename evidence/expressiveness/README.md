@@ -2,8 +2,8 @@
 
 The first review of this repository: which problems a tree of topics encodes, which need a graph, and whether a program can compute the cost of reading either.
 
-- Pool: 15 new sources: 13 formal, 2 grey; 1 more is linked from a sibling review.
-- Grey scores are in the sources file, all above 10 of 20.
+- Pool: 20 new sources: 18 formal, 2 grey; 1 more is linked from a sibling review.
+- Grey scores are in the sources file, both above 10 of 20 after a second rating.
 - A first pass: abstracts and records.
 
 ## Files

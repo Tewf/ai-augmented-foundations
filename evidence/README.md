@@ -7,8 +7,8 @@ the method the topic's reviews share, which is not repeated here ([the topic's e
 
 | Part | Summary |
 |---|---|
-| [expressiveness](expressiveness/) | 15 new sources: what a tree or graph of topics encodes, and whether a program can compute what it costs a reader |
-| [convergence](convergence/) | 19 new sources: when a project stops, at an acceptable result or the best, and what an optimum is with several wanting parties |
+| [expressiveness](expressiveness/) | 20 new sources: what a tree or graph of topics encodes, and whether a program can compute what it costs a reader |
+| [convergence](convergence/) | 23 new sources: when a project stops, at an acceptable result or the best, and what an optimum is with several wanting parties |
 | [cost on the family](expressiveness/cost-on-the-family.md) | the candidate cost of a tree of topics, computed on eight trees, not validated |
 | [bibliography](bibliography.md) | every work cited, once, with a stable link |
 

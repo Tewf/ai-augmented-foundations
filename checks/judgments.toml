@@ -13,27 +13,6 @@ file = ""
 answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and record 0001 today, and grows one file per choice."
 
 [[answer]]
-check = "paraphrase"
-path = "evidence/convergence/protocol.md"
-question = "says nearly what evidence/expressiveness/protocol.md (line 58) says, similarity 0.98: one fact in two places?"
-file = "e21a62786d19"
-answer = "No: the strings and counts differ; only the pointer under `Stopping, selection, scoring, synthesis and limits` is common, and it links to the one method in the evidence README."
-
-[[answer]]
-check = "paraphrase"
-path = "evidence/convergence/review.md"
-question = "says nearly what evidence/expressiveness/review.md (line 3) says, similarity 0.96: one fact in two places?"
-file = "8faece523519"
-answer = "No: each review opens with its own reading rule and holds different strands; the shared sentence only says `Surveys first` and how numbers are marked."
-
-[[answer]]
-check = "paraphrase"
-path = "evidence/convergence/state-of-the-art.md"
-question = "says nearly what evidence/expressiveness/state-of-the-art.md (line 3) says, similarity 0.92: one fact in two places?"
-file = "a1d00fd8db99"
-answer = "No: the tables differ; the two files share only the sentence that keeps `most adopted` apart from best evidence, which is the format's rule."
-
-[[answer]]
 check = "document-mode"
 path = "AGENTS.md"
 question = "reads about equally as how-to and explanation: one mode per document?"
@@ -56,27 +35,6 @@ answer = "Yes: the opening of the file leads to the content its name promises, a
 
 [[answer]]
 check = "name-content"
-path = "evidence/convergence/position.md"
-question = "the name 'position' and the opening are far apart in meaning (-0.01): does the name predict the content?"
-file = "bd228acf0d47"
-answer = "Yes: the opening of the file leads to the content its name promises, as the heading `What is known` shows; the low score is the short opening line, not a mismatch."
-
-[[answer]]
-check = "name-content"
-path = "evidence/convergence/protocol.md"
-question = "the name 'protocol' and the opening are far apart in meaning (0.15): does the name predict the content?"
-file = "e21a62786d19"
-answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Why grey literature` shows; the low score is the short opening line, not a mismatch."
-
-[[answer]]
-check = "name-content"
-path = "evidence/convergence/state-of-the-art.md"
-question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
-file = "a1d00fd8db99"
-answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds` shows; the low score is the short opening line, not a mismatch."
-
-[[answer]]
-check = "name-content"
 path = "evidence/expressiveness/frame.md"
 question = "the name 'frame' and the opening are far apart in meaning (0.15): does the name predict the content?"
 file = "da27dd90eddb"
@@ -91,38 +49,10 @@ answer = "Yes: the opening of the file leads to the content its name promises, a
 
 [[answer]]
 check = "name-content"
-path = "evidence/expressiveness/protocol.md"
-question = "the name 'protocol' and the opening are far apart in meaning (0.15): does the name predict the content?"
-file = "7e3091a1e66a"
-answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Why grey literature` shows; the low score is the short opening line, not a mismatch."
-
-[[answer]]
-check = "name-content"
-path = "evidence/expressiveness/review.md"
-question = "the name 'review' and the opening are far apart in meaning (0.15): does the name predict the content?"
-file = "47dedfd33131"
-answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Strand 0` shows; the low score is the short opening line, not a mismatch."
-
-[[answer]]
-check = "name-content"
 path = "evidence/expressiveness/state-of-the-art.md"
 question = "the name 'state' and the opening are far apart in meaning (0.01): does the name predict the content?"
 file = "0a499bab9142"
 answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds` shows; the low score is the short opening line, not a mismatch."
-
-[[answer]]
-check = "paraphrase"
-path = "evidence/convergence/state-of-the-art.md"
-question = "says nearly what evidence/expressiveness/state-of-the-art.md (line 3) says, similarity 0.92: one fact in two places?"
-file = "7cab0f6c4cd0"
-answer = "No: the two files hold different content, a table of sub-questions for convergence and a list of sourced numbers for expressiveness. The similarity comes from the shared frame sentence `Two records are kept apart`, which the standard's shape asks for in each topic."
-
-[[answer]]
-check = "name-content"
-path = "evidence/convergence/state-of-the-art.md"
-question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
-file = "7cab0f6c4cd0"
-answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds (achieved)` shows; the low score is the short opening line, not a mismatch."
 
 [[answer]]
 check = "tree-shape"
@@ -167,29 +97,134 @@ file = "7f56eaf5fbba"
 answer = "They stay apart: the workflow pins the standard and runs `Test the local checks`, the config holds the tables the checks read; they changed together while the checks were first added."
 
 [[answer]]
+check = "section-cohesion"
+path = "AGENTS.md"
+question = "section 'House conventions' is far from every other section (0.24): a second role?"
+file = "41b51a224f34"
+answer = "No second role: `House conventions` is the short list of the conventions the other sections apply, for whoever changes the repository."
+
+[[answer]]
+check = "logical-lines"
+path = "README.fr.md"
+question = "97 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "8b06829bc9f3"
+answer = "Il peut rester : son rôle est la page d'accueil, une phrase, `État`, `L'adopter` et la carte des parties, sans partie en double."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "94 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "445358bd0dd0"
+answer = "It may stay: its role is the front page, one sentence, `Status`, `Take it` and the map of the parts, with no part held twice."
+
+[[answer]]
+check = "logical-lines"
+path = "evidence/expressiveness/protocol.md"
+question = "83 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "5c60e25a62ff"
+answer = "It may stay: its role is the log of the searches for this topic, one sentence; the `Forward citations` and `A second rater` sections extend that log with the same counts-and-strings form, and nothing is held twice."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/config.toml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "7f56eaf5fbba"
+answer = "They stay apart: the workflow pins the standard and runs `Test the local checks`, the config holds the tables the checks read; they changed together while the checks were first added."
+
+[[answer]]
 check = "co-change"
 path = "README.fr.md"
 question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "e02566ed7ee9"
+file = "8b06829bc9f3"
 answer = "They stay apart and already link: the front page lists `decisions` in its `Contenu` table, and the folder README lists each record, so each new record touches both."
 
 [[answer]]
 check = "co-change"
 path = "README.md"
 question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "3560ee9395ee"
+file = "445358bd0dd0"
 answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/protocol.md"
+question = "says nearly what evidence/expressiveness/protocol.md (line 58) says, similarity 0.98: one fact in two places?"
+file = "93a634e35d80"
+answer = "No: the strings and counts differ; only the pointer under `Stopping, selection, scoring, synthesis and limits` is common, and it links to the one method in the evidence README."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/review.md"
+question = "says nearly what evidence/expressiveness/review.md (line 3) says, similarity 0.96: one fact in two places?"
+file = "1912a3e45f2c"
+answer = "No: each review opens with its own reading rule and holds different strands; the shared sentence only says `Surveys first` and how numbers are marked."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/state-of-the-art.md"
+question = "says nearly what evidence/expressiveness/state-of-the-art.md (line 3) says, similarity 0.92: one fact in two places?"
+file = "fcefe9e26e30"
+answer = "No: the two files hold different content, a table of sub-questions for convergence and a list of sourced numbers for expressiveness. The similarity comes from the shared frame sentence `Two records are kept apart`, which the standard's shape asks for in each topic."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/protocol.md"
+question = "says nearly what evidence/expressiveness/protocol.md (line 112) says, similarity 0.91: one fact in two places?"
+file = "93a634e35d80"
+answer = "No: the strings and counts differ; the shared lines are the section headings and the method of `A second rater`, which this file links to the one in the expressiveness protocol."
 
 [[answer]]
 check = "document-mode"
 path = "README.fr.md"
 question = "reads about equally as tutorial and reference: one mode per document?"
-file = "e02566ed7ee9"
+file = "8b06829bc9f3"
 answer = "One mode: understanding why. The numbered steps of `L'adopter` are a short section of a front page, not a second mode."
 
 [[answer]]
+check = "name-content"
+path = "evidence/convergence/against.md"
+question = "the name 'against' and the opening are far apart in meaning (0.19): does the name predict the content?"
+file = "79714a04b8a7"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Against stopping at acceptable` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/position.md"
+question = "the name 'position' and the opening are far apart in meaning (-0.01): does the name predict the content?"
+file = "06504fb326a8"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `What is known` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/protocol.md"
+question = "the name 'protocol' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "93a634e35d80"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Why grey literature` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/state-of-the-art.md"
+question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
+file = "fcefe9e26e30"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds (achieved)` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/protocol.md"
+question = "the name 'protocol' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "5c60e25a62ff"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Why grey literature` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "name-content"
+path = "evidence/expressiveness/review.md"
+question = "the name 'review' and the opening are far apart in meaning (0.15): does the name predict the content?"
+file = "72a78e6d99c8"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Strand 0` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
 check = "section-cohesion"
-path = "AGENTS.md"
-question = "section 'House conventions' is far from every other section (0.24): a second role?"
-file = "41b51a224f34"
-answer = "No second role: `House conventions` is the short list of the conventions the other sections apply, for whoever changes the repository."
+path = "evidence/convergence/sources.md"
+question = "section 'Left out, with the reason' is far from every other section (0.22): a second role?"
+file = "cb029fa1f272"
+answer = "No second role: `Left out, with the reason` records what the pool excludes, which belongs to a file that lists what the pool holds, and the section is a short list."

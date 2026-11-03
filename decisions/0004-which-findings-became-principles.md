@@ -34,7 +34,7 @@ Stayed a finding:
 - **Keep the objectives apart and report the front** (Praditwong 2011, supported with caveat for module clustering): the review lists it as a candidate rule, not adopted.
   - Its check would need several objectives, and no run here has them.
 - **The field says expressive power and anytime stopping** (the frame step): a naming result.
-- **No stopping rule for an unknown distribution, and no problem that fits neither a tree nor a graph**: absences, not graded claims.
+- **No stopping rule for one run with an unknown distribution, and no problem that fits neither a tree nor a graph**: absences, not graded claims.
 
 ## Consequences
 

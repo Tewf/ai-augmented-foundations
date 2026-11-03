@@ -56,3 +56,57 @@ Counts were taken on 2026-11-02 by the method in the evidence README.
 ## 6. Stopping, selection, scoring, synthesis and limits
 
 As in the evidence README. The stopping rule ended the strings E9, E16, E18 and E21. The scores of grey sources are in [sources](sources.md).
+
+## 7. Forward citations (2026-11-03)
+
+The three sources the review cites most were taken as seeds: Sweller 1998, Paas 2003 and Bodlaender 1998. Each has 2 keys in [review](review.md), tied with Angles 2008. The three with the largest bodies of citing work were kept. Citing works were listed from OpenAlex, with the filter "published after 2019" and, for the two large seeds, a title-and-abstract term.
+
+| Id | Seed | Filter on citing works | Matching | Retrieved and screened by title |
+|---|---|---|---|---|
+| F1 | Bodlaender 1998 | published after 2019, abstract mentions treewidth | 115 | 115 |
+| F2 | Sweller 1998 | published after 2019, abstract mentions cognitive load | 1104 | 300, the most cited |
+| F3 | Paas 2003 | published after 2019, abstract mentions cognitive load measurement | 79 | 79 |
+
+- Total: 1,298 matching, 494 retrieved and screened by title. Six abstracts were opened: five works were added and one was not (a 2020 Festschrift volume on treewidth: the abstract names no result).
+- Added: Gima 2024 (from F1); Krieglstein 2022 and Berssanette 2021 (from F2); Quintero-Manes 2024 and Ledneva 2021 (from F3). Each changes or sharpens a finding in [review](review.md), strand 2 or 4, or in [against](against.md).
+- Every number read from an abstract is marked secondary in the review.
+- Not searched: citing works before 2020, the 804 matching works of F2 that were not retrieved, and a second index.
+
+## 8. A second rater on the grey sources (2026-11-03)
+
+Each grey source was scored again, independently, by a second rater.
+
+- The rater was a language model, one source per call.
+- It was given the 20 criteria of Garousi 2019, Table 7, and the rule that a part it cannot see scores 0.
+- It received the cleaned text of the source and returned the eight subtotals.
+- Disagreements of more than 3 points on the total were settled by rereading the source.
+- A score changes only with the reason written.
+
+| Source | Review, first | Second rater: A, M, O, D, P, N, I, T | Second rater, total | Difference | Review, after |
+|---|---|---|---|---|---|
+| Miles 2009 | 17.5 | 2, 2, 1, 1, 0, 0, 0, 1 | 7 | 10.5 | 16 |
+| Campbell 2023 | 14 | 1, 4, 0, 1, 0, 1, 0, 1 | 9 | 5 | 11 |
+
+The second rater's subtotals for Campbell 2023 sum to 8 and it wrote a total of 9. Both are recorded as given, and the difference uses its total of 9.
+
+Rereading, with the reason:
+
+- **Miles 2009, A 4 to 3:** the text names two editors with their institutions, which holds A1 and A2. It shows neither their other work nor their expertise, which the first score had credited.
+- **Miles 2009, O 4 to 3:** a specification has no data to follow, so O4 does not hold.
+- **Miles 2009, D 0.5 to 1:** the Recommendation prints its date, 2009-08-18.
+- **Campbell 2023, A 3 to 1.5:** the text names the author and the company, and shows nothing else about her work.
+- **Campbell 2023, M 3 to 4.5:** the white paper states its aim, its rules for counting and worked examples, which the first score had undervalued.
+- **Campbell 2023, O 2 to 0:** the producer sells the tool that reports the metric, so O3 is 0, and the paper gives no data on readers' judgments.
+- **Campbell 2023, I 1 to 0:** the text shows no citation or adoption signal.
+
+
+Agreement over the four grey sources of both topics, on the totals out of 20:
+
+- **Mean absolute difference:** 8.4 points ((10.5 + 5 + 7.5 + 10.5) / 4 = 8.375). After the rereading below, 6.3.
+- **Kappa on the threshold decision (10 of 20):** 0. The review put all four above the threshold and the second rater put all four below, so observed agreement is 0 and so is the agreement expected by chance. With four sources and no variation in either rater, the figure shows no agreement and little more.
+- **Review decisions:** all four stay above the threshold after the rereading. Schwaber 2020, in the convergence topic, now sits at the threshold itself.
+- **Reading:** the second rater scored low on every source and gave 0 to whatever it could not see in the excerpt. Its totals show how much of each score rests on facts outside the page text, such as authorship and adoption. They do not show that the review's scores were wrong.
+
+Limits: four sources; one rating each; the second rater saw an excerpt, not the whole document, in a single call per source.
+
+Agreement for this topic alone: mean absolute difference 7.75, both sources above the threshold for the review and below it for the second rater.

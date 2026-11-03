@@ -2,8 +2,8 @@
 
 The second review of this repository. It asks when a project built from a tree of topics should stop, at an acceptable result or the best one. It asks what an optimum is with several wanting parties, and what the maintainer's exact optimisation says.
 
-- Pool: 19 new sources: 17 formal, 2 grey; 5 more are linked from sibling reviews.
-- Grey scores are in the sources file, all above 10 of 20.
+- Pool: 23 new sources: 21 formal, 2 grey; 5 more are linked from sibling reviews.
+- Grey scores are in the sources file, both at or above 10 of 20 after a second rating.
 - A first pass: abstracts and records.
 
 ## Files
@@ -30,5 +30,6 @@ The second review of this repository. It asks when a project built from a tree o
 | Several parties give a front, and no fair rule picks a point | supported with caveat (secondary) | review.md, strand 4 |
 | The total-depth cost is intractable, with a 2-approximation on trees | measured as proof, abstract read | review.md, strand 5 |
 | One exact optimum differed from the owner's tree in grouping | measured, one case, maintainer's records | baseline.md |
-| A stopping rule for an unknown distribution | not found | position.md |
+| Stopping rules exist given a sample, or over repeated tasks | proved, and measured in simulation (secondary) | review.md, strands 2 and 3 |
+| A stopping rule for one run with an unknown distribution | not found | position.md |
 | A study of stopping a document collection | not found | position.md |
