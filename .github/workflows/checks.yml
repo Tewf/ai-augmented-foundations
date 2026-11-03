@@ -54,6 +54,10 @@ jobs:
           done
       - name: Test the local checks
         run: python3 -m unittest discover -s repository/checks
+      - name: Test the worked model
+        run: |
+          pip install numpy
+          python3 -m unittest discover -s repository/evidence/bayesian-optimisation
       - name: Check the repository, tiers program and meaning
         run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
       - name: List the questions left for judgment

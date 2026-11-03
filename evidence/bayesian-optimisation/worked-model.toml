@@ -1,0 +1,157 @@
+# Inputs of worked_model.py: the recorded runs of the family's two sequential experiments, and the model's tunables.
+# Every value under [model] is PROVISIONAL: nothing sets it, and the write-up shows what changes when it moves.
+
+[model]
+benefit_per_pass = 100000     # PROVISIONAL: tokens one passing run is worth (the rework it avoids); a judgment of the maintainer
+future_runs = 200             # PROVISIONAL: delegated runs still to come, over which a better arm pays back
+runs_per_step = 10            # one step is ten runs of one arm, as in both experiments
+prior_mean = 0.25             # PROVISIONAL: pass rate assumed before any run
+amplitude = 0.25              # PROVISIONAL: prior variance of the pass rate
+length_tier = 1.0             # PROVISIONAL: kernel length along the model tier (small 0, Haiku 1)
+length_info = 0.5             # PROVISIONAL: kernel length along the information level, scaled to 0..1
+length_interface = 1.0        # PROVISIONAL: kernel length along the interface (API 0, coding agent 1)
+ucb_beta = 2.0                # PROVISIONAL: width of the upper confidence bound, in standard deviations
+thompson_draws = 4000         # draws of the Beta posteriors for the bandit policy
+seed = 20261103
+output_tokens_api = 930       # estimate: mean reply length of round one's 30 replies, characters divided by 4
+agent_tokens_alone = 46900    # fresh input plus output tokens per agent session, mean of 15 (method comparison)
+agent_tokens_method = 39650   # same, for the method arm
+
+# Information level: 0 task sentence alone, 1 convention brief (what is decided), 2 convention plus the list of checks,
+# 3 that plus a start file and a memory index (the method).
+# Interface: 0 one call to the model's API, 1 a coding agent in a folder.
+# prompt_tokens is the prompt length in characters divided by 4 (an estimate), averaged over the three tasks.
+# k out of n runs passed the hidden tests. "stage" is the experiment that produced the run.
+
+[[arm]]
+id = "api-small-0"
+tier = 0
+info = 0
+interface = 0
+prompt_tokens = 30
+[[arm]]
+id = "api-small-1"
+tier = 0
+info = 1
+interface = 0
+prompt_tokens = 182
+[[arm]]
+id = "api-small-2"
+tier = 0
+info = 2
+interface = 0
+prompt_tokens = 358
+[[arm]]
+id = "api-haiku-0"
+tier = 1
+info = 0
+interface = 0
+prompt_tokens = 30
+[[arm]]
+id = "api-haiku-1"
+tier = 1
+info = 1
+interface = 0
+prompt_tokens = 182
+[[arm]]
+id = "api-haiku-2"
+tier = 1
+info = 2
+interface = 0
+prompt_tokens = 358
+[[arm]]
+id = "agent-haiku-0"
+tier = 1
+info = 0
+interface = 1
+[[arm]]
+id = "agent-haiku-3"
+tier = 1
+info = 3
+interface = 1
+[[arm]]
+id = "agent-small-0"
+tier = 0
+info = 0
+interface = 1
+[[arm]]
+id = "agent-small-1"
+tier = 0
+info = 1
+interface = 1
+[[arm]]
+id = "agent-small-2"
+tier = 0
+info = 2
+interface = 1
+[[arm]]
+id = "agent-small-3"
+tier = 0
+info = 3
+interface = 1
+[[arm]]
+id = "agent-haiku-1"
+tier = 1
+info = 1
+interface = 1
+[[arm]]
+id = "agent-haiku-2"
+tier = 1
+info = 2
+interface = 1
+
+[[run]]
+stage = 1
+arm = "api-small-0"
+k = 0
+n = 10
+[[run]]
+stage = 1
+arm = "api-small-1"
+k = 0
+n = 10
+[[run]]
+stage = 1
+arm = "api-small-2"
+k = 1
+n = 10
+[[run]]
+stage = 2
+arm = "api-small-0"
+k = 0
+n = 30
+[[run]]
+stage = 2
+arm = "api-small-1"
+k = 8
+n = 30
+[[run]]
+stage = 2
+arm = "api-small-2"
+k = 8
+n = 30
+[[run]]
+stage = 2
+arm = "api-haiku-0"
+k = 0
+n = 30
+[[run]]
+stage = 2
+arm = "api-haiku-1"
+k = 22
+n = 30
+[[run]]
+stage = 2
+arm = "api-haiku-2"
+k = 21
+n = 30
+[[run]]
+stage = 3
+arm = "agent-haiku-0"
+k = 0
+n = 15
+[[run]]
+stage = 3
+arm = "agent-haiku-3"
+k = 15
+n = 15

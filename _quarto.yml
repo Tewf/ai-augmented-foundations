@@ -9,6 +9,10 @@ project:
     - LICENSE
     - LICENSES/
     - "**/*.md"
+    - evidence/bayesian-optimisation/worked_model.py
+    - evidence/bayesian-optimisation/worked-model.toml
+    - evidence/bayesian-optimisation/test_worked_model.py
+    - evidence/convergence/runs.toml
 
 website:
   title: "AI-augmented foundations"
