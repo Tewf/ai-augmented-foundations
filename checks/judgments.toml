@@ -123,3 +123,24 @@ path = "evidence/expressiveness/state-of-the-art.md"
 question = "the name 'state' and the opening are far apart in meaning (0.01): does the name predict the content?"
 file = "0a499bab9142"
 answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "paraphrase"
+path = "evidence/convergence/state-of-the-art.md"
+question = "says nearly what evidence/expressiveness/state-of-the-art.md (line 3) says, similarity 0.92: one fact in two places?"
+file = "7cab0f6c4cd0"
+answer = "No: the two files hold different content, a table of sub-questions for convergence and a list of sourced numbers for expressiveness. The similarity comes from the shared frame sentence `Two records are kept apart`, which the standard's shape asks for in each topic."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "21ea8c393c03"
+answer = "No: the front page is one mode, reference. It gives the scope, the findings and the baseline under `La référence`. The `Vérifier` section is a short list of commands a reader runs once, not a lesson, so it stays."
+
+[[answer]]
+check = "name-content"
+path = "evidence/convergence/state-of-the-art.md"
+question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
+file = "7cab0f6c4cd0"
+answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds (achieved)` shows; the low score is the short opening line, not a mismatch."
