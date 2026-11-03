@@ -6,7 +6,7 @@ Two records are kept apart: most adopted and best evidence. Upper bounds (achiev
 |---|---|---|---|
 | V1 When to stop a search | a time-box and a definition of done (Schwaber 2020) | Weitzman 1979, Ferguson 1989: stopping rules under known distributions | theorems |
 | V1 Quality against time | solver time limits with a status and a gap (OR-Tools 2026) | Zilberstein 1996: the performance profile | theory, no field study of projects |
-| V2 Optimum against what people accept | none | Candela 2016: the cohesion-coupling optimum is not what developers say they balance | 100 systems, 29 developers (secondary) |
+| V2 Optimum against what people accept | none | Candela 2016: asks whether developers pursue the cohesion-coupling optimum | 100 systems, 29 developers (secondary) |
 | V3 Several wanting parties | a ranked backlog | Marler 2004, Deb 2002: a Pareto front; Arrow 1950: no fair aggregation | surveys, theorems |
 | V4 Can a program tell done | a written criterion checked by tests | none for a tree of topics | none |
 

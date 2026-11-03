@@ -83,7 +83,7 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 3. **The field has the frame for convergence.** Satisficing, bounded optimality and anytime algorithms give quality as
    a function of time and stopping as a decision. No source applies them to the structure of a document collection.
 4. **The exact optimum and the accepted tree differ in kind.** In the maintainer's own run the optimum was grouped by
-   product and the owner's tree by stage. Candela 2016 found a gap of the same kind in code. Stop at acceptable, and
+   product and the owner's tree by stage. For code, Candela 2016 asks whether developers pursue the cohesion-coupling optimum. Stop at acceptable, and
    use the optimum as a bound.
 5. **Done can be tested by a program** as a written criterion plus a tolerance on the optimality gap. No stopping rule
    was found for an unknown distribution of what the next change brings.

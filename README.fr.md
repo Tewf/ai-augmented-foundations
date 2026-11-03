@@ -84,7 +84,7 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
    anytime donnent la qualité en fonction du temps et l'arrêt comme décision. Aucune source ne les applique à la
    structure d'une collection de documents.
 4. **L'optimum exact et l'arbre accepté diffèrent par nature.** Dans l'exécution du mainteneur, l'optimum était groupé
-   par produit et l'arbre du propriétaire par étape. Candela 2016 a trouvé un écart du même genre dans du code. S'arrêter
+   par produit et l'arbre du propriétaire par étape. Pour le code, Candela 2016 demande si les développeurs visent l'optimum cohésion-couplage. S'arrêter
    à l'acceptable, et se servir de l'optimum comme borne.
 5. **Un programme peut tester « fini »** comme un critère écrit plus une tolérance sur l'écart d'optimalité. Aucune règle
    d'arrêt n'a été trouvée pour une loi inconnue de ce que le prochain changement apporte.

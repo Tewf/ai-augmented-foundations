@@ -22,7 +22,7 @@ The maintainer's own exact optimisation, written down for this review. It is a p
 
 ## What it says on the front page's questions
 
-- Gap between optimum and accepted: large on this case, and not in cost only. The optimum answered a different question from the owner's. Candela 2016 found the same kind of gap in code.
+- Gap between optimum and accepted: large on this case, and not in cost only. The optimum answered a different question from the owner's. For code, Candela 2016 asks whether developers pursue the cohesion-coupling optimum.
 - Which to stop at: acceptable for the tree, with the optimum used as a bound that certifies the gap. One case supports this; it is not a general result.
 
 ## The best formulation found, to compare against
