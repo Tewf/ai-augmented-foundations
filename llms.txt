@@ -23,3 +23,9 @@ Each page's markdown source is served at the same path with a .md extension.
 - [Evidence](https://tewf.github.io/ai-augmented-foundations/evidence/README.md): one literature review per topic, with the evidence against
 - [Bibliography](https://tewf.github.io/ai-augmented-foundations/evidence/bibliography.md): every cited work, once
 - [Decisions](https://tewf.github.io/ai-augmented-foundations/decisions/README.md): the choices this repository made, one record each
+
+<!-- hand -->
+## Reviews
+
+- [Bayesian optimisation](https://tewf.github.io/ai-augmented-foundations/evidence/bayesian-optimisation/README.md): a project as the optimisation of an unknown objective, the choice of the next step, the stop that follows, and a worked model on the family's own runs
+- [Worked model](https://tewf.github.io/ai-augmented-foundations/evidence/bayesian-optimisation/worked-model.md): the family's runs as evaluations, with the policy each would choose

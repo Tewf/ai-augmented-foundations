@@ -10,11 +10,13 @@ optimum. Les membres tiennent la méthode ; ce dépôt l'étudie avec les outils
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03) :** version 0.1.0. Construit : la première revue de littérature, en deux topics (43 sources
-> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice) avec ses références nommées, un coût candidat d'un
-> arbre de topics calculé sur les huit arbres de la famille, trois principes chacun avec une vérification, et 49 tests
-> unitaires des deux vérifications. Ouvert : rien ne valide le coût candidat, l'écart à l'optimum est calculé sur trois
-> exécutions enregistrées dont aucune n'est marquée acceptée, et il n'y a pas encore de forme. Le nom reste
+> **État (2026-11-03) :** version 0.1.0 plus un troisième topic non publié. Construit : la première revue de
+> littérature, en trois topics (82 sources nouvelles et 7 reprises de revues sœurs, lues par résumé ou notice) avec ses
+> références nommées, un coût candidat d'un arbre de topics calculé sur les huit arbres de la famille, un modèle travaillé
+> du prochain pas sur les exécutions de la famille, trois principes chacun avec une vérification, et 69 tests unitaires
+> (49 des deux vérifications, 20 du modèle). Ouvert : rien ne valide le coût candidat, l'écart à l'optimum est calculé sur
+> trois exécutions enregistrées dont aucune n'est marquée acceptée, le modèle repose sur huit points et aucune
+> implémentation de référence n'a été lancée, et il n'y a pas encore de forme. Le nom reste
 > provisoire : la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et
 > ne propose aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat
 > nouveau.
@@ -88,13 +90,15 @@ digraph where_it_sits {
 | dedans | le coût cognitif : les principes de la norme lus comme contraintes, et une mesure de coût qu'un programme calcule | expressif et illisible ne vaut pas mieux que lisible et incomplet |
 | dedans | la convergence : à quelle vitesse un projet atteint un résultat, et quand il s'arrête ; satisfaction (satisficing), algorithmes anytime, règles d'arrêt | des projets convergent vite vers un résultat acceptable, d'autres n'atteignent jamais l'optimum, et la différence n'a pas de nom |
 | dedans | l'optimum : ce que la famille entend par là, à plusieurs objectifs, et ce que dit la seule optimisation exacte déjà menée | un optimum exact des conventions a éparpillé des fichiers que personne ne voulait épars ; acceptable et optimal diffèrent |
+| dedans | le prochain pas : un projet lu comme l'optimisation d'un objectif inconnu, avec le choix du prochain pas et l'arrêt qui en découlent | le cadrage du mainteneur : recueillir des données, laisser des agents estimer, puis faire le pas suivant ; la règle d'arrêt en découle |
 | dehors | recueillir les données | [ai-augmented-cases](https://github.com/Tewf/ai-augmented-cases) |
 | dehors | le gabarit du topic et sa vérification | [reader-ergonomics-topic](https://github.com/Tewf/reader-ergonomics-topic) |
 | dehors | la méthode | [ai-augmented-project](https://github.com/Tewf/ai-augmented-project) |
 
 ## Le premier travail : une revue de littérature
 
-Écrit, en première passe sur deux topics : [expressiveness](evidence/expressiveness/) et [convergence](evidence/convergence/).
+Écrit, en première passe sur trois topics : [expressiveness](evidence/expressiveness/), [convergence](evidence/convergence/)
+et [Bayesian optimisation](evidence/bayesian-optimisation/).
 Chacun suit les cinq étapes d'une revue de thèse (cadrage, revue, état de l'art, positionnement, référence) et finit sur
 sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliography.md).
 
@@ -110,15 +114,20 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
    déclarée sont fiables, mais une méta-analyse de 2022 trouve leur validité en partie contredite (Krieglstein 2022). Un premier candidat, quatre
    composantes combinées comme Cognitive Complexity combine imbrication et ruptures, est [calculé sur la famille](evidence/expressiveness/cost-on-the-family.md)
    et non validé ; la profondeur fournit l'essentiel de sa valeur.
-3. **Le domaine a le cadre de la convergence.** La satisfaction (satisficing), l'optimalité bornée et les algorithmes
-   anytime donnent la qualité en fonction du temps et l'arrêt comme décision. Aucune source ne les applique à la
-   structure d'une collection de documents.
+3. **Le domaine a le cadre de la convergence, et du prochain pas.** La satisfaction (satisficing), l'optimalité bornée
+   et les algorithmes anytime donnent l'arrêt comme décision. L'optimisation bayésienne donne toute la boucle : un
+   modèle de substitution, une fonction d'acquisition et une règle d'arrêt. Aucune source n'applique l'une ou l'autre à
+   une collection de documents. Aucune n'a été trouvée pour des pas qui changent la fonction, des évaluateurs qui sont
+   des agents biaisés, et un objectif en partie jugé par une personne.
 4. **L'optimum exact et l'arbre accepté diffèrent par nature.** Dans l'exécution du mainteneur, l'optimum était groupé
    par produit et l'arbre du propriétaire par étape. Pour le code, Candela 2016 demande si les développeurs visent l'optimum cohésion-couplage. S'arrêter
    à l'acceptable, et se servir de l'optimum comme borne.
-5. **Un programme peut tester « fini »** comme un critère écrit plus une tolérance sur l'écart d'optimalité. Des règles d'arrêt existent
-   avec un échantillon (Correa 2023) ou sur des tâches répétées (Svegliato 2020 ; Sung 2021). Aucune n'a été trouvée
-   pour une seule exécution à loi inconnue de ce que le prochain changement apporte.
+5. **Un programme peut tester « fini », et l'arrêt peut se déduire.** Un critère écrit plus une tolérance sur l'écart
+   d'optimalité se teste. Des règles d'arrêt existent avec un échantillon (Correa 2023) ou sur des tâches répétées
+   (Svegliato 2020 ; Sung 2021). Pour une seule exécution, elles existent dès qu'un modèle de substitution donne la loi
+   du gain suivant (Makarova 2022). La règle : s'arrêter quand le gain attendu sur l'usage restant est inférieur au coût
+   d'un pas. Sur les huit bras de la famille, le [modèle travaillé](evidence/bayesian-optimisation/worked-model.md)
+   s'arrête de justesse, à 237 usages futurs.
 
 ## La référence
 
@@ -127,6 +136,9 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 - **Convergence :** l'optimisation exacte du mainteneur, mise par écrit pour cette revue, avec ses résultats. Elle est
   comparée au coût de Dasgupta par liaison moyenne, à la qualité de modularisation, à un front de Pareto et à un coût borné en profondeur
   ([référence](evidence/convergence/baseline.md)).
+- **Prochain pas :** un modèle de substitution gaussien avec amélioration espérée bruitée, exécuté dans BoTorch.
+  UCB1 est la politique plus simple et la recherche aléatoire la politique nulle.
+  Le terminateur de Makarova 2022 donne l'arrêt ([référence](evidence/bayesian-optimisation/baseline.md)).
 
 ## Questions auxquelles la revue doit répondre
 
@@ -137,6 +149,8 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 - **Acceptable ou optimal.** Ce que l'optimisation exacte déjà menée dit de l'écart entre l'optimum et ce que les gens
   acceptent, et auquel des deux un projet devrait s'arrêter.
 - **Fini.** Ce que la famille appellera « fini » pour un projet, et si un programme peut le dire.
+- **Prochain pas.** Quel pas vient ensuite si le but est une fonction inconnue, et quand s'arrêter. Répondu en partie :
+  la [revue](evidence/bayesian-optimisation/) et un [modèle travaillé](evidence/bayesian-optimisation/worked-model.md) sur huit points.
 
 ## Vérifier
 
@@ -145,7 +159,7 @@ git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics 
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
 
-La CI exécute d'abord les tests unitaires des deux vérifications, puis les mêmes vérifications, à chaque push, et une exécution échoue à la première erreur
+La CI exécute d'abord les tests unitaires des deux vérifications et du modèle travaillé, puis les mêmes vérifications, à chaque push, et une exécution échoue à la première erreur
 ([checks.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/checks.yml)). Chaque push
 sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](https://tewf.github.io/ai-augmented-foundations/)
 ([pages.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/pages.yml)).
@@ -156,7 +170,7 @@ sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](ht
 |---|---|
 | [standard.md](standard.md) | la fiche : les trois principes que les revues ont gradués, chacun avec son grade, ses preuves et sa vérification |
 | [principles](principles/) | un fichier par principe, en deux groupes : expressiveness et convergence |
-| [evidence](evidence/) | la première revue en deux topics, expressiveness et convergence, le coût candidat sur la famille, et la bibliographie |
+| [evidence](evidence/) | la première revue en trois topics, expressiveness, convergence et Bayesian optimisation, le coût candidat sur la famille, le modèle travaillé du prochain pas, et la bibliographie |
 | [checks](checks/) | la config et les vérifications locales `topic-cost` et `optimality-gap`, avec leurs tests unitaires |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 

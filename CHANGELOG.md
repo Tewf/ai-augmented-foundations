@@ -5,8 +5,16 @@ A pin move is recorded here, not in decisions/.
 
 ## [Unreleased]
 
+### Added
+
+- A third topic of the literature review, Bayesian optimisation: a project as the optimisation of an unknown objective.
+  It has 39 new sources, a named baseline, and a worked model on the family's own runs, a program with its inputs and 20 unit tests.
+- Decision 0005, which reads the project as Bayesian optimisation and derives the stopping rule from the value of information.
+- A step in the checks workflow that runs the worked model's unit tests.
+
 ### Changed
 
+- The principle stop-at-acceptable gains its derivation and keeps its grade.
 - Pinned reader-ergonomics v1.20.0 (`4f99372`), from v1.19.2 (`b9732b9`): the runner's verdicts file (`--out`), and hand-written llms.txt lines kept through a rebuild
 
 ## [0.1.0] - 2026-11-03

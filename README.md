@@ -10,11 +10,12 @@ The members hold the method; this repository studies it with the tools of logic,
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03):** version 0.1.0. Built: the first literature review, in two topics (43 new sources and 6
-> linked from sibling reviews, read by abstract or record) with its baselines named, a candidate cost of a tree of
-> topics computed on the family's eight trees, three principles each with a check, and 49 unit tests of the two checks.
+> **Status (2026-11-03):** version 0.1.0 plus an unreleased third topic. Built: the first literature review, in three
+> topics (82 new sources and 7 linked from sibling reviews, read by abstract or record) with its baselines named, a
+> candidate cost of a tree of topics computed on the family's eight trees, a worked model of the next step on the
+> family's own runs, three principles each with a check, and 69 unit tests (49 of the two checks, 20 of the model).
 > Open: nothing validates the candidate cost, the optimality gap is computed on three recorded runs and none is marked
-> accepted, and there are no shapes yet. The name is still provisional: the review found that the field says
+> accepted, the worked model rests on eight points and no reference implementation was run, and there are no shapes yet. The name is still provisional: the review found that the field says
 > expressive power and anytime stopping, not complete and converges, and proposes no rename. It is not an official
 > standard, not a peer-reviewed study and not a new result.
 >
@@ -86,13 +87,15 @@ digraph where_it_sits {
 | in | cognitive cost: the standard's principles read as constraints, and a measure of cost a program can compute | expressive and unreadable is no better than readable and incomplete |
 | in | convergence: how fast a project reaches a result, and when it stops; satisficing, anytime algorithms, stopping rules | some projects converge fast to an acceptable result, some never reach the optimum, and the difference is not named |
 | in | the optimum: what the family means by it, with several objectives, and what the one exact optimisation already run says | an exact optimum of the conventions scattered files nobody wanted scattered; acceptable and optimal differ |
+| in | the next step: a project read as the optimisation of an unknown objective, with the choice of the next step and the stop derived from it | the maintainer's framing: gather data, let agents estimate, then take the next step; the stopping rule follows from it |
 | out | collecting the data | [ai-augmented-cases](https://github.com/Tewf/ai-augmented-cases) |
 | out | the topic template and its check | [reader-ergonomics-topic](https://github.com/Tewf/reader-ergonomics-topic) |
 | out | the method | [ai-augmented-project](https://github.com/Tewf/ai-augmented-project) |
 
 ## The first job: a literature review
 
-Written, as a first pass of two topics: [expressiveness](evidence/expressiveness/) and [convergence](evidence/convergence/).
+Written, as a first pass of three topics: [expressiveness](evidence/expressiveness/), [convergence](evidence/convergence/)
+and [Bayesian optimisation](evidence/bayesian-optimisation/).
 Each follows the five steps of a thesis review (frame, review, state of the art, position, baseline) and ends on its
 baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.md).
 
@@ -108,14 +111,18 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
    2022 meta-analysis finds their validity partly contradicted (Krieglstein 2022). A first candidate, four
    components combined as Cognitive Complexity combines nesting and breaks, is [computed on the family](evidence/expressiveness/cost-on-the-family.md)
    and not validated; depth supplies most of its value.
-3. **The field has the frame for convergence.** Satisficing, bounded optimality and anytime algorithms give quality as
-   a function of time and stopping as a decision. No source applies them to the structure of a document collection.
+3. **The field has the frame for convergence, and for the next step.** Satisficing, bounded optimality and anytime
+   algorithms give stopping as a decision. Bayesian optimisation gives the whole loop: a surrogate, an acquisition
+   function and a stopping rule. No source applies either to a document collection. None was found for steps that change
+   the function, evaluators that are agents with biases, and an objective that is partly a person's judgment.
 4. **The exact optimum and the accepted tree differ in kind.** In the maintainer's own run the optimum was grouped by
    product and the owner's tree by stage. For code, Candela 2016 asks whether developers pursue the cohesion-coupling optimum. Stop at acceptable, and
    use the optimum as a bound.
-5. **Done can be tested by a program** as a written criterion plus a tolerance on the optimality gap. Stopping rules exist
-   given a sample (Correa 2023) or over repeated tasks (Svegliato 2020; Sung 2021). None was found for one run with an
-   unknown distribution of what the next change brings.
+5. **Done can be tested by a program, and the stop can be derived.** A written criterion plus a tolerance on the
+   optimality gap is testable. Stopping rules exist given a sample (Correa 2023) or over repeated tasks (Svegliato
+   2020; Sung 2021). For one run they exist once a surrogate gives the distribution of the next gain (Makarova 2022).
+   The rule is: stop when the expected gain over the remaining use is below the cost of a step. On the family's eight
+   arms the [worked model](evidence/bayesian-optimisation/worked-model.md) stops narrowly, at 237 future runs.
 
 ## The baseline
 
@@ -124,6 +131,9 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 - **Convergence:** the maintainer's own exact optimisation, written down for this review, with its results, against
   Dasgupta's cost by average linkage, modularisation quality, a Pareto front and a depth-bounded cost
   ([baseline](evidence/convergence/baseline.md)).
+- **Next step:** a Gaussian-process surrogate with noisy expected improvement, run in BoTorch, with UCB1 as the simpler
+  policy, random search as the null and the terminator of Makarova 2022 as the stop
+  ([baseline](evidence/bayesian-optimisation/baseline.md)).
 
 ## Questions the review must answer
 
@@ -134,6 +144,8 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 - **Acceptable or optimal.** What the exact optimisation already run says about the gap between the optimum and
   what people accept, and which of the two a project should stop at.
 - **Done.** What the family will call "done" for a project, and whether a program can tell.
+- **Next step.** Which step comes next if the goal is an unknown function, and when to stop. Answered in part: the
+  [review](evidence/bayesian-optimisation/) and a [worked model](evidence/bayesian-optimisation/worked-model.md) on eight points.
 
 ## Check it
 
@@ -142,7 +154,7 @@ git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics 
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
 
-CI first runs the unit tests of the two checks, then the same checks, on every push, and a run fails on any error
+CI first runs the unit tests of the two checks and of the worked model, then the same checks, on every push, and a run fails on any error
 ([checks.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/checks.yml)). Every push
 to master also renders the site, [tewf.github.io/ai-augmented-foundations](https://tewf.github.io/ai-augmented-foundations/)
 ([pages.yml](https://github.com/Tewf/ai-augmented-foundations/blob/master/.github/workflows/pages.yml)).
@@ -153,7 +165,7 @@ to master also renders the site, [tewf.github.io/ai-augmented-foundations](https
 |---|---|
 | [standard.md](standard.md) | the card: the three principles the reviews graded, each with its grade, evidence and check |
 | [principles](principles/) | one file per principle, in two groups: expressiveness and convergence |
-| [evidence](evidence/) | the first review in two topics, expressiveness and convergence, the candidate cost on the family, and the bibliography |
+| [evidence](evidence/) | the first review in three topics, expressiveness, convergence and Bayesian optimisation, the candidate cost on the family, the worked model of the next step, and the bibliography |
 | [checks](checks/) | the config and the local checks `topic-cost` and `optimality-gap`, with their unit tests |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
