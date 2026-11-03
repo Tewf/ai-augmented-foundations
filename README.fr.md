@@ -10,8 +10,8 @@ optimum. Les membres tiennent la méthode ; ce dépôt l'étudie avec les outils
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-02) :** la première revue de littérature est écrite, en deux topics, comme première passe : 34 sources
-> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice. Elle nomme sa référence. Le nom reste provisoire :
+> **État (2026-11-03) :** la première revue de littérature est écrite, en deux topics, comme première passe : 34 sources
+> nouvelles et 6 reprises de revues sœurs, lues par résumé ou notice. Elle nomme sa référence. Un coût candidat d'un arbre de topics est calculé sur les huit arbres de la famille ; rien ne le valide. Le nom reste provisoire :
 > la revue a trouvé que le domaine dit puissance d'expression et arrêt anytime, non complet et converge, et ne propose
 > aucun renommage. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
@@ -79,7 +79,9 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
    langages formels (Höller 2014). Aucun problème qui n'ait besoin ni d'arbre ni de graphe n'a été trouvé.
 2. **Aucun coût d'un arbre de topics n'est validé.** Pour le code, 121 métriques n'ont pas capté la compréhensibilité
    (Scalabrino 2021), et un seul décompte, Cognitive Complexity, corrèle avec le temps de compréhension (Muñoz Barón
-   2020). Qu'un décompte d'imbrication prédise l'effort d'un lecteur sur des topics n'est pas testé.
+   2020). Qu'un décompte d'imbrication prédise l'effort d'un lecteur sur des topics n'est pas testé. Un premier candidat, quatre
+   composantes combinées comme Cognitive Complexity combine imbrication et ruptures, est [calculé sur la famille](evidence/expressiveness/cost-on-the-family.md)
+   et non validé ; la profondeur fournit l'essentiel de sa valeur.
 3. **Le domaine a le cadre de la convergence.** La satisfaction (satisficing), l'optimalité bornée et les algorithmes
    anytime donnent la qualité en fonction du temps et l'arrêt comme décision. Aucune source ne les applique à la
    structure d'une collection de documents.
@@ -102,6 +104,7 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 - **Expressivité.** Un énoncé formel de ce qu'un arbre de topics encode, et de ce qui exige un graphe ; existe-t-il un
   problème qui n'exige ni l'un ni l'autre et n'entre dans rien ?
 - **Coût.** Une mesure de coût cognitif qu'un programme calcule à partir d'un arbre de topics, et son grade de preuve.
+  Répondu en partie : une [mesure candidate](decisions/0003-a-candidate-cost-of-a-tree-of-topics.md), grade non trouvé.
 - **Acceptable ou optimal.** Ce que l'optimisation exacte déjà menée dit de l'écart entre l'optimum et ce que les gens
   acceptent, et auquel des deux un projet devrait s'arrêter.
 - **Fini.** Ce que la famille appellera « fini » pour un projet, et si un programme peut le dire.
@@ -122,7 +125,7 @@ sur master construit aussi le site, [tewf.github.io/ai-augmented-foundations](ht
 
 | Partie | Résumé |
 |---|---|
-| [evidence](evidence/) | la première revue en deux topics, expressiveness et convergence, et la bibliographie |
+| [evidence](evidence/) | la première revue en deux topics, expressiveness et convergence, le coût candidat sur la famille, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

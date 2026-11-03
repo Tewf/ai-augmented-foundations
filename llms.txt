@@ -1,6 +1,6 @@
 # AI-augmented foundations
 
-> Whether the family's setup is complete and whether it converges: can a tree or graph of topics encode every problem at a cognitive cost a person bears; how fast a project reaches a result, acceptable or optimal, and what an optimum is. The first review is written, in two topics.
+> Whether the family's setup is complete and whether it converges: can a tree or graph of topics encode every problem at a cognitive cost a person bears; how fast a project reaches a result, acceptable or optimal, and what an optimum is. The first review is written, in two topics, with a candidate cost of a tree of topics computed on the family.
 
 Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
 
@@ -9,7 +9,9 @@ Each page's markdown source is served at the same path with a .md extension. Thi
 - [AI-augmented foundations](https://tewf.github.io/ai-augmented-foundations/README.md): the scope, the first job and the questions its review must answer
 - [Evidence](https://tewf.github.io/ai-augmented-foundations/evidence/README.md): the first review in two topics and the bibliography
 - [Expressiveness](https://tewf.github.io/ai-augmented-foundations/evidence/expressiveness/README.md): what a tree or graph of topics encodes, and its cost to a reader
+- [Cost on the family](https://tewf.github.io/ai-augmented-foundations/evidence/expressiveness/cost-on-the-family.md): the candidate cost of a tree of topics on eight trees, not validated
 - [Convergence](https://tewf.github.io/ai-augmented-foundations/evidence/convergence/README.md): when a project stops, and what an optimum is
+- [Decision 0003](https://tewf.github.io/ai-augmented-foundations/decisions/0003-a-candidate-cost-of-a-tree-of-topics.md): the candidate cost and its components
 - [Decisions](https://tewf.github.io/ai-augmented-foundations/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing

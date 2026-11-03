@@ -10,8 +10,9 @@ The members hold the method; this repository studies it with the tools of logic,
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-02):** the first literature review is written, in two topics, as a first pass: 34 new sources and 6
-> linked from sibling reviews, read by abstract or record. It names its baseline. The name is still provisional: the review
+> **Status (2026-11-03):** the first literature review is written, in two topics, as a first pass: 34 new sources and 6
+> linked from sibling reviews, read by abstract or record. It names its baseline. A candidate cost of a tree of topics is
+> computed on the family's eight trees; nothing validates it. The name is still provisional: the review
 > found that the field says expressive power and anytime stopping, not complete and converges, and proposes no rename.
 > It is not an official standard, not a peer-reviewed study and not a new result.
 >
@@ -79,7 +80,9 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
    neither a tree nor a graph was found.
 2. **No cost of a tree of topics has been validated.** For code, 121 metrics failed to capture understandability
    (Scalabrino 2021), and one count, Cognitive Complexity, correlates with comprehension time (Muñoz Barón 2020).
-   Whether a nesting count predicts a reader's effort on topics is untested.
+   Whether a nesting count predicts a reader's effort on topics is untested. A first candidate, four
+   components combined as Cognitive Complexity combines nesting and breaks, is [computed on the family](evidence/expressiveness/cost-on-the-family.md)
+   and not validated; depth supplies most of its value.
 3. **The field has the frame for convergence.** Satisficing, bounded optimality and anytime algorithms give quality as
    a function of time and stopping as a decision. No source applies them to the structure of a document collection.
 4. **The exact optimum and the accepted tree differ in kind.** In the maintainer's own run the optimum was grouped by
@@ -101,6 +104,7 @@ baseline. The bibliography is [evidence/bibliography.md](evidence/bibliography.m
 - **Expressiveness.** A formal statement of what a tree of topics encodes, and what needs a graph; is there a problem
   that needs neither and fits nothing?
 - **Cost.** A measure of cognitive cost a program can compute from a tree of topics, and its grade of evidence.
+  Answered in part: a [candidate measure](decisions/0003-a-candidate-cost-of-a-tree-of-topics.md), grade not found.
 - **Acceptable or optimal.** What the exact optimisation already run says about the gap between the optimum and
   what people accept, and which of the two a project should stop at.
 - **Done.** What the family will call "done" for a project, and whether a program can tell.
@@ -121,7 +125,7 @@ to master also renders the site, [tewf.github.io/ai-augmented-foundations](https
 
 | Part | Summary |
 |---|---|
-| [evidence](evidence/) | the first review in two topics, expressiveness and convergence, and the bibliography |
+| [evidence](evidence/) | the first review in two topics, expressiveness and convergence, the candidate cost on the family, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

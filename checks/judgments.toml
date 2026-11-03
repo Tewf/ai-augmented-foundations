@@ -144,3 +144,17 @@ path = "evidence/convergence/state-of-the-art.md"
 question = "the name 'state' and the opening are far apart in meaning (0.03): does the name predict the content?"
 file = "7cab0f6c4cd0"
 answer = "Yes: the opening of the file leads to the content its name promises, as the heading `Upper bounds (achieved)` shows; the low score is the short opening line, not a mismatch."
+
+[[answer]]
+check = "tree-shape"
+path = "checks/local"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `checks/local` is the folder the extension contract names for a repository's own checks, and the standard's runner reads modules there."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as tutorial and reference: one mode per document?"
+file = "437d6222ff2c"
+answer = "Référence : la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`; la seule tâche, `Vérifier`, tient en deux commandes."

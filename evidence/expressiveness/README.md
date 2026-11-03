@@ -18,6 +18,7 @@ The first review of this repository: which problems a tree of topics encodes, wh
 | [position](position.md) | step 4: known, unknown, added |
 | [against](against.md) | the evidence against |
 | [baseline](baseline.md) | step 5: the named baselines |
+| [cost on the family](cost-on-the-family.md) | the candidate cost of a tree of topics, computed on eight trees, not validated |
 
 ## Claims
 
