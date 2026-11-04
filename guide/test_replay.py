@@ -1,5 +1,6 @@
 """Tests of replay.py: the trace file, the beliefs, each policy on a toy history, the stop and the counts."""
 import random
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -221,6 +222,38 @@ class Replay(unittest.TestCase):
     def test_by_kind_totals_the_family(self):
         jobs = replay.load()
         self.assertEqual(sum(r[1] for r in replay.by_kind(jobs)), len(replay.family(jobs)))
+
+
+EXTRA = {"depends_on": ["x"], "minutes": 12, "date": "2026-11-04", "repo": "r", "outcome": "pass"}
+EXPORTED = """[[job]]
+id = "a"
+date = "2026-11-04"
+wave = 0
+agents = 1
+minutes = 17
+depends_on = ["b"]
+produced = "something"
+"""
+
+
+class JobRecord(unittest.TestCase):
+    """The trace extended by the job record (ai-augmented-project, shapes/job-record.md) is read as it was."""
+
+    def test_the_new_fields_change_nothing_in_the_report(self):
+        jobs = replay.load()
+        extended = [{**j, **EXTRA} for j in jobs]
+        for which in ("moved", "kept"):
+            self.assertEqual(replay.report(extended, which), replay.report(jobs, which))
+        self.assertEqual(replay.table(extended), replay.table(jobs))
+
+    def test_a_record_written_by_the_exporter_loads_and_replays(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "jobs.toml"
+            path.write_text(EXPORTED)
+            jobs = replay.load(path)
+        self.assertEqual(replay.family(jobs)[0]["depends_on"], ["b"])
+        self.assertEqual(replay.replay(jobs), [])
+        self.assertIn("Waves replayed: 0", replay.report(jobs, "moved"))
 
 
 if __name__ == "__main__":

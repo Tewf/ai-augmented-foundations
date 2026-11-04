@@ -3,6 +3,12 @@
 The releases this repository pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
+## [Unreleased]
+
+### Added
+
+- 2 tests that the replay reads the trace extended by the job record (ai-augmented-project, shapes/job-record.md) as it read the trace before.
+
 ## [0.1.1] - 2026-11-04
 
 ### Added
