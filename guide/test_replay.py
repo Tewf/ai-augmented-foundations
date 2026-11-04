@@ -1,5 +1,7 @@
 """Tests of replay.py: the trace file, the beliefs, each policy on a toy history, the stop and the counts."""
 import random
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -254,6 +256,80 @@ class JobRecord(unittest.TestCase):
         self.assertEqual(replay.family(jobs)[0]["depends_on"], ["b"])
         self.assertEqual(replay.replay(jobs), [])
         self.assertIn("Waves replayed: 0", replay.report(jobs, "moved"))
+
+
+class JobsOption(unittest.TestCase):
+    """--jobs reads a job record; rows missing kind or tokens_k are counted and kept out of the comparison."""
+
+    ROWS = """[[job]]
+id = "a"
+wave = 0
+kind = "review"
+agents = 1
+tokens_k = 100
+moved = 1
+kept = 1
+
+[[job]]
+id = "b"
+wave = 1
+kind = "build"
+agents = 1
+tokens_k = 50
+moved = 1
+kept = 1
+
+[[job]]
+id = "no-kind"
+wave = 1
+agents = 1
+tokens_k = 50
+
+[[job]]
+id = "no-tokens"
+wave = 1
+kind = "audit"
+agents = 1
+"""
+
+    def run_cli(self, *args):
+        return subprocess.run([sys.executable, str(HERE / "replay.py"), *args], capture_output=True, text=True)
+
+    def write(self, text):
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        path = Path(d.name) / "jobs.toml"
+        path.write_text(text)
+        return path
+
+    def test_usable_splits_and_counts(self):
+        rows = replay.load(self.write(self.ROWS))
+        kept, n = replay.usable(rows)
+        self.assertEqual([j["id"] for j in kept], ["a", "b"])
+        self.assertEqual(n, 2)
+
+    def test_the_left_out_row_does_not_change_the_comparison(self):
+        full = replay.load(self.write(self.ROWS))
+        only = [j for j in full if j["id"] in ("a", "b")]
+        self.assertEqual(replay.report(replay.usable(full)[0], "moved"), replay.report(only, "moved"))
+
+    def test_the_command_prints_the_line(self):
+        r = self.run_cli("--jobs", str(self.write(self.ROWS)))
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertTrue(r.stdout.endswith("2 rows without kind or tokens: left out\n"))
+
+    def test_no_row_missing_prints_zero(self):
+        r = self.run_cli("--jobs", str(self.write(self.ROWS.split("[[job]]\nid = \"no-kind\"")[0])))
+        self.assertTrue(r.stdout.endswith("0 rows without kind or tokens: left out\n"))
+
+    def test_without_the_option_the_output_is_unchanged(self):
+        r = self.run_cli()
+        self.assertEqual(r.stdout, replay.report(replay.load(), "moved"))
+        self.assertNotIn("left out", r.stdout)
+
+    def test_the_exported_record_runs_and_leaves_rows_out(self):
+        rows = replay.load(self.write(EXPORTED))
+        self.assertEqual(replay.usable(rows)[1], 1)
 
 
 if __name__ == "__main__":

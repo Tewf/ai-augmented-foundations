@@ -3,7 +3,7 @@ of information would have stopped it.
 
 The trace is trace.toml, one row per job. An arm is a kind of job (setup, review, audit, design, build, experiment,
 upkeep). Before each wave of jobs the policies see only the rows of earlier waves, propose one kind, and the proposal is
-compared with the kinds the maintainer ran in that wave. Standard library only; run: python3 replay.py [--outcome moved|kept]
+compared with the kinds the maintainer ran in that wave. Standard library only; run: python3 replay.py [--outcome moved|kept] [--jobs jobs.toml]
 Every tunable is in trace.toml's sibling table below and is PROVISIONAL. A replay on one trace proves little.
 """
 import argparse
@@ -27,6 +27,16 @@ METER_POINTS = 15.0     # weekly-meter points the two days moved (12 to 27, all 
 def load(path=None):
     with open(path or HERE / "trace.toml", "rb") as f:
         return tomllib.load(f)["job"]
+
+
+def usable(jobs):
+    """Split rows into those the policies can read and the count of those missing `kind` or `tokens_k`. Never guessed."""
+    kept = [j for j in jobs if "kind" in j and "tokens_k" in j]
+    return kept, len(jobs) - len(kept)
+
+
+def left_out_line(n):
+    return f"{n} rows without kind or tokens: left out"
 
 
 def family(jobs):
@@ -263,12 +273,17 @@ def main():
     ap.add_argument("--outcome", choices=("moved", "kept"), default="moved")
     ap.add_argument("--table", action="store_true", help="print the trace as a markdown table")
     ap.add_argument("--kinds", action="store_true", help="print the totals by kind")
+    ap.add_argument("--jobs", metavar="TOML", help="read the rows of a job record instead of trace.toml")
     ap.add_argument("--benefit", type=float, help="override BENEFIT, thousands of tokens a moving step is worth")
     args = ap.parse_args()
     if args.benefit is not None:
         global BENEFIT
         BENEFIT = args.benefit
-    jobs = load()
+    left_out = None
+    if args.jobs:
+        jobs, left_out = usable(load(args.jobs))
+    else:
+        jobs = load()
     if args.table:
         print(table(jobs), end="")
     elif args.kinds:
@@ -276,6 +291,8 @@ def main():
             print(row)
     else:
         print(report(jobs, args.outcome), end="")
+    if left_out is not None:
+        print(left_out_line(left_out))
 
 
 if __name__ == "__main__":

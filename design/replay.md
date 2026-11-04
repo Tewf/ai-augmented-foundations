@@ -12,7 +12,11 @@ This page reports the first test of [the guide](guide.md): the program [guide/re
 - **Policies:** greedy on the net value, UCB1, Thompson sampling, the knowledge gradient per cost, and random as the null. The first four are the [baseline's](../evidence/bayesian-optimisation/baseline.md) B3 to B6, written again here for kinds.
 - **Hit:** the proposed kind is among the kinds the maintainer ran in that wave. Random hits with the chance of a kind being among them.
 - **Stop:** the guide stops when no step has an expected gain over the jobs still to come above its cost. The jobs to come are counted from the trace, which is hindsight.
-- Run: `python3 guide/replay.py [--outcome kept] [--benefit 1200]`. Thirty-six tests are in [guide/test_replay.py](../guide/test_replay.py).
+- Run: `python3 guide/replay.py [--outcome kept] [--benefit 1200]`. Forty-four tests are in [guide/test_replay.py](../guide/test_replay.py).
+
+## Reading a job record
+
+`python3 guide/replay.py --jobs <file.toml>` reads the rows of a job record ([the shape](https://github.com/Tewf/ai-augmented-project/blob/master/shapes/job-record.md)) in place of the trace. A record marks an unknown field by leaving it out, so a row without `kind` or `tokens_k` cannot be given an arm or a cost. Such a row is kept out of the comparison, never guessed, and counted in a last line: "n rows without kind or tokens: left out". Without the option, the output is the one above, unchanged.
 
 ## What each policy proposed
 
