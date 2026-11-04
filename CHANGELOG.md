@@ -3,7 +3,7 @@
 The releases this repository pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
-## [Unreleased]
+## [0.1.1] - 2026-11-04
 
 ### Added
 
@@ -20,6 +20,7 @@ A pin move is recorded here, not in decisions/.
 
 - The principle stop-at-acceptable gains its derivation and keeps its grade.
 - Pinned reader-ergonomics v1.20.0 (`4f99372`), from v1.19.2 (`b9732b9`): the runner's verdicts file (`--out`), and hand-written llms.txt lines kept through a rebuild
+- Tag v0.1.1 and a GitHub release of the same name.
 
 ## [0.1.0] - 2026-11-03
 

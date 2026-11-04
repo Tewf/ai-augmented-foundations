@@ -10,8 +10,8 @@ abstract: >-
 type: software
 authors:
   - name: "Tewf"
-version: 0.1.0
-date-released: 2026-11-03
+version: 0.1.1
+date-released: 2026-11-04
 repository-code: "https://github.com/Tewf/ai-augmented-foundations"
 license:
   - Apache-2.0
