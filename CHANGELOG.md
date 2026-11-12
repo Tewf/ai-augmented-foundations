@@ -5,15 +5,13 @@ A pin move is recorded here, not in decisions/.
 
 ## [Unreleased]
 
-### Changed
-
-- Pinned reader-ergonomics v1.24.2 (`65e4247`), from v1.21.0 (`2e5b6f0`): fixes that remove false findings in the sentence, term and figure checks, and `[defined_terms] cues`.
-
-## [Unreleased]
-
 ### Added
 
 - 2 tests that the replay reads the trace extended by the job record (ai-augmented-project, shapes/job-record.md) as it read the trace before.
+
+### Changed
+
+- Pinned reader-ergonomics v1.24.2 (`65e4247`), from v1.21.0 (`2e5b6f0`): fixes that remove false findings in the sentence, term and figure checks, and `[defined_terms] cues`.
 
 ## [0.1.1] - 2026-11-04
 
