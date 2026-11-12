@@ -275,21 +275,21 @@ answer = "Reference: the file follows its shape and is consulted part by part; i
 check = "logical-lines"
 path = "README.fr.md"
 question = "118 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
-file = "8f7d1c268c8d"
+file = "8d37aaf8b39e"
 answer = "Il peut rester : sa fonction est la page d'accueil, avec `État`, `Vérifier` et la carte des parties, sans partie tenue deux fois."
 
 [[answer]]
 check = "logical-lines"
 path = "README.md"
 question = "114 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
-file = "526be8ea3f03"
+file = "75db71142a4f"
 answer = "It may stay: its role is the front page, one sentence, `Status`, `Take it` and the map of the parts, with no part held twice."
 
 [[answer]]
 check = "co-change"
 path = ".github/workflows/checks.yml"
-question = "changed together with _quarto.yml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "b30ce77e01b7"
+question = "changed together with checks/config.toml in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4dd1c79f9a3f"
 answer = "They stay apart: the workflow runs `Test the replay of the guide` and the other tests, the config holds the tables the checks read; they changed together while checks were added."
 
 [[answer]]
@@ -310,12 +310,19 @@ answer = "They stay apart and already link: the changelog records each record's 
 check = "co-change"
 path = "README.fr.md"
 question = "changed together with decisions/README.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "8f7d1c268c8d"
+file = "8d37aaf8b39e"
 answer = "They stay apart and already link: the front page lists `decisions` in its `Contenu` table, and the folder README lists each record, so each new record touches both."
 
 [[answer]]
 check = "co-change"
 path = "README.md"
 question = "changed together with decisions/README.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "526be8ea3f03"
+file = "75db71142a4f"
 answer = "They stay apart and already link: the front page lists `decisions` in its `Contents` table, and the folder README lists each record, so each new record touches both."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with _quarto.yml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4dd1c79f9a3f"
+answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`, and Quarto reads its config at the root; they change together when the pinned standard moves, which standard-pin keeps equal."
