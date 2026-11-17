@@ -29,10 +29,10 @@ Cette page en anglais : [README.md](README.md). Les deux versions suivent le mê
 ## L'adopter
 
 Dix minutes, sans lire les revues. La forme générale est la section « Take your own version » de
-[reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/README.md#take-your-own-version) ; la voici pour mesurer un arbre de topics.
+[reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/README.md#take-your-own-version) ; la voici pour mesurer un arbre de topics.
 
 1. **Épingler la norme par son commit**, pour que ses vérifications ne changent pas sous vos pieds :
-   `git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 65e4247` (v1.24.2).
+   `git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 722cfa4` (v1.24.3).
 2. **Copier ce dont vous avez besoin, une fois :** les deux vérifications de [checks/local/](checks/local/)
    (`topic_cost.py`, `optimality_gap.py`) dans le `checks/local/` de votre dépôt, et les [principes](principles/) que
    vous adoptez. Il n'y a pas de forme ici ; l'unité est le fichier de principe. Les copies sont à vous ; notez le commit
@@ -80,7 +80,7 @@ digraph where_it_sits {
 
 - **Il étudie [reader-ergonomics-topic](https://github.com/Tewf/reader-ergonomics-topic/blob/86e14fe9a1a9877d6a87a2f8b4e8713f98724b5a/shapes/topic.md)** (v0.6.1), dont la revue des modèles de nœud
   ouvre la question de l'expressivité, et **[reader-ergonomics-blueprint](https://github.com/Tewf/reader-ergonomics-blueprint)**, la boucle dont la convergence est demandée.
-- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) et exécute ses vérifications en CI.
+- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/standard.md)** (v1.24.3) et exécute ses vérifications en CI.
 - **Il ne pointe que vers le bas.** Les données dont il a besoin viennent d'[ai-augmented-cases](https://github.com/Tewf/ai-augmented-cases) ;
   la carte de la famille est [ai-augmented](https://github.com/Tewf/ai-augmented).
 
@@ -158,7 +158,7 @@ sa référence. La bibliographie est [evidence/bibliography.md](evidence/bibliog
 ## Vérifier
 
 ```sh
-git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 65e4247
+git clone https://github.com/Tewf/reader-ergonomics && git -C reader-ergonomics checkout 722cfa4
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
 

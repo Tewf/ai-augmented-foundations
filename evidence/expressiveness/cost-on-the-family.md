@@ -4,7 +4,7 @@
 > reader-ergonomics repositories. Done when one table gives each tree's cost and its costliest topic, and every
 > number can be recomputed from the files by one program. Nothing validates the cost yet.
 
-**Shape:** [report](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/report.md), a problem solved in steps.
+**Shape:** [report](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/shapes/report.md), a problem solved in steps.
 **What this tests:** [a computed cost with provisional weights](../../principles/expressiveness/computed-cost.md).
 
 ## Caution

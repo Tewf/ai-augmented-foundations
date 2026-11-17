@@ -2,8 +2,8 @@
 
 What a tree of topics can encode, and a number a program can compute for what it asks of a reader. Both come from
 the [expressiveness review](../../evidence/expressiveness/README.md). The standard's own rules for depth and breadth
-([shallow outline](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/document/shallow-outline.md),
-[browsable folders](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/collection/browsable-folders.md))
+([shallow outline](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/principles/document/shallow-outline.md),
+[browsable folders](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/principles/collection/browsable-folders.md))
 are the parts the cost adds up.
 
 | Principle | Claim |

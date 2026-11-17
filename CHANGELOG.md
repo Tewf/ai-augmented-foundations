@@ -11,6 +11,8 @@ A pin move is recorded here, not in decisions/.
 
 ### Changed
 
+- Pinned reader-ergonomics v1.24.3 (`722cfa4`), from v1.24.2 (`65e4247`): the reference check reads a SICI DOI whole and warns on an HTTP 5xx instead of failing, so the weekly run stops failing on a host's bad day.
+- `evidence/bibliography.md`, Bergstra 2012: the link is the journal's own page, https://jmlr.org/papers/v13/bergstra12a.html. The DOI `10.5555/2188385.2188395` is the ACM Digital Library's, which doi.org does not register, and the weekly reference run of 16 Nov. 2026 failed on it (HTTP 404).
 - Pinned reader-ergonomics v1.24.2 (`65e4247`), from v1.21.0 (`2e5b6f0`): fixes that remove false findings in the sentence, term and figure checks, and `[defined_terms] cues`.
 
 ## [0.1.1] - 2026-11-04
